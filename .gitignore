@@ -209,4 +209,5 @@ FakesAssemblies/
 # LightSwitch generated files
 GeneratedArtifacts/
 _Pvt_Extensions/
+Application/Runtime/
 ModelManifest.xml
