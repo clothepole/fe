@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>项目周期预测统计图</title>
+	<link id="sss" rel="stylesheet" type="text/css" href="../../themes/gray/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../../themes/icon.css">
+	<link rel="stylesheet" type="text/css" href="../../demo/demo.css">
+	<script type="text/javascript" src="../../js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="../../js/jquery.easyui.min.js"></script>
+	<script type="text/javascript">
+ function cssSet(d){
+	if(d==1){
+		$('#sss').attr('href','../../themes/gray/easyui.css');			
+	}
+	if(d==2){
+		$('#sss').attr('href','../../themes/default/easyui.css');
+	}
+	
+	if(d==3){
+		$('#sss').attr('href','../../themes/black/easyui.css');
+	}
+	if(d==4){
+		$('#sss').attr('href','../../themes/metro/easyui.css');
+	}
+ }
+</script>
+	<script type="text/javascript" src="../../js/highcharts.js"></script>
+	<script type="text/javascript">
+$(function () {
+        $('#container').highcharts({
+            chart: {
+                type: 'scatter',
+				backgroundColor: null,
+                zoomType: 'xy',
+				events:{
+				  	click:function(){
+						window.open( '../../38/projectScatter1.html','','toolbar=no,  menubar=no, location=no, directories=no, status=no, scrollbars=yes, resizable=yes, width=900, height=500, left=200, top=100');
+				//alert('dddddd');  //事件
+					}
+				}
+            },
+            title: {
+                text: '项目周期监视图'
+            },
+           /* subtitle: {
+                text: '制作于  2014'
+            },*/
+            xAxis: {
+                title: {
+                    enabled: true,
+                    text: '项目周期 (总工期数)'
+                },
+                startOnTick: true,
+                endOnTick: true,
+                showLastLabel: true
+            },
+            yAxis: {
+				
+                title: {
+                    text: '项目类型'
+                },
+				labels:{
+					formatter : function(){
+						return "";					
+					}
+				}/*,
+				min:20140100,
+				max:20140331*/
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'left',
+                verticalAlign: 'top',
+                x: 100,
+                y: 0,
+                floating: true,
+                backgroundColor: '#FFFFFF',
+                borderWidth: 1
+            },
+            plotOptions: {
+                scatter: {
+                    marker: {
+                        radius: 5,
+                        states: {
+                            hover: {
+                                enabled: true,
+                                lineColor: 'rgb(100,100,100)'
+                            }
+                        }
+                    },
+                    states: {
+                        hover: {
+                            marker: {
+                                enabled: true
+                            }
+                        }
+                    }
+                }
+            },
+			tooltip: {
+				headerFormat: '<b>{series.name}</b><br>',
+				formatter: function(){
+					var y = this.y;
+					while(y >= 0.3){
+						y = y - 0.2;
+					}
+					var str = new String(y);
+					if(str.length < 10){
+						str += "0";
+					}
+					
+					str = str.substring(2,10);
+					return  this.x + ' , ' + str;
+				},
+				
+			},
+			credits:{    //去掉网址
+			     enabled:false
+			},  
+            series: [{
+                name: '民品',
+                color: 'rgba(223, 83, 83, .5)',
+                data: [[30, 0.20140102], [60, 0.20140104], [600, 0.20140110],
+                    [560, 0.20140120], [540, 0.20140124], [580, 0.20140128],
+                    [30, 0.20140202], [95, 0.20140206], [60, 0.20140208], [600, 0.20140210],
+                    [610, 0.20140212], [580, 0.20140214],  [594, 0.20140228],
+                    [32, 0.20140301], [45, 0.20140310], [68, 0.20140315], [590, 0.20140320],
+                    [577, 0.20140323],  [586, 0.20140327], [600, 0.20140331]]
+            },{
+                name: '民贸',
+                color: 'rgba(123, 83, 183, .5)',
+                data: [[30, 0.40140102], [60, 0.40140104], [600, 0.40140110],
+                    [560, 0.40140120], [540, 0.40140124], [580, 0.40140128],
+                    [30, 0.40140202], [95, 0.40140206], [60, 0.401402028], [600, 0.40140210],
+                    [610, 0.40140212], [580, 0.40140214],  [594, 0.4014028],
+                    [32, 0.40140301], [45, 0.40140310], [68, 0.40140315], [590, 0.40140320],
+                    [577, 0.40140323],  [586, 0.40140327], [600, 0.40140331]]
+            },{
+                name: '军品',
+                color: 'rgba(223, 83, 83, .5)',
+                data: [[30, 0.60140102], [60, 0.60140104], [600, 0.60140110],
+                    [560, 0.60140120], [540, 0.60140124], [580, 0.60140128],
+                    [30, 0.60140202], [95, 0.60140206], [60, 0.60140208], [600, 0.60140210],
+                    [610, 0.60140212], [580, 0.60140214],  [594, 0.60140228],
+                    [32, 0.60140301], [45, 0.60140310], [68, 0.60140315], [590, 0.60140320],
+                    [577, 0.60140323],  [586, 0.60140327], [600, 0.60140331]]
+            },{
+                name: '军贸',
+                color: 'rgba(123, 83, 183, .5)',
+                data: [[30, 0.80140102], [60, 0.80140104], [600, 0.80140110],
+                    [560, 0.80140120], [540, 0.80140124], [580, 0.80140128],
+                    [30, 0.80140202], [95, 0.80140206], [60, 0.801402028], [600, 0.80140210],
+                    [610, 0.80140212], [580, 0.80140214],  [594, 0.8014028],
+                    [32, 0.80140301], [45, 0.80140310], [68, 0.80140315], [590, 0.80140320],
+                    [577, 0.80140323],  [586, 0.80140327], [600, 0.80140331]]
+            }]
+        });
+    });
+	</script>
+	</head>
+	<body>
+<div class="panel-search" style="padding:10px;"> 类别:
+      <select class="easyui-combobox" panelHeight="auto" style="width:100px">
+    <option value="java">科研</option>
+    <option value="c">非科研</option>
+    <option value="basic">事务性</option>
+    <option value="perl">其它</option>
+  </select>
+      </select>
+      &nbsp;&nbsp;部门:
+      <select class="easyui-combobox" panelHeight="auto" style="width:100px">
+    <option value="java">对地勘测</option>
+    <option value="c">对地勘测</option>
+    <option value="basic">对地勘测</option>
+    <option value="perl">对地勘测</option>
+  </select>
+      &nbsp;&nbsp;时间范围:
+      <input class="easyui-datebox" >
+      到
+      <input class="easyui-datebox" >
+      <a href="#" class="easyui-linkbutton" iconCls="icon-search">统计</a> </div>
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+</body>
+</html>

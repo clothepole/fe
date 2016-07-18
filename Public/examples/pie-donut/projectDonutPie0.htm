@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+		<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>总供热面积</title>
+<!--		<link id="sss" rel="stylesheet" type="text/css" href="../../themes/gray/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../../themes/icon.css">-->
+		<style type="text/css">
+		body {
+	background-color: #FFF;
+}
+        </style>
+		<script type="text/javascript" src="/Public/js/commjs/jquery.js"></script>
+
+<!--		<script type="text/javascript" src="../../js/jquery.easyui.min.js"></script>-->
+		<!--<script type="text/javascript">
+ function cssSet(d){
+	if(d==1){
+		$('#sss').attr('href','../../themes/gray/easyui.css');			
+	}
+	if(d==2){
+		$('#sss').attr('href','../../themes/default/easyui.css');
+	}
+	
+	if(d==3){
+		$('#sss').attr('href','../../themes/black/easyui.css');
+	}
+	if(d==4){
+		$('#sss').attr('href','../../themes/metro/easyui.css');
+	}
+ }
+</script>-->
+		<script type="text/javascript">
+		$(function () {		
+			var colors = Highcharts.getOptions().colors,
+				categories = ['低温运行', '常温运行'],
+				name = 'Browser brands',
+				data = [{
+							y: 45,
+							x: 170,
+							color: '#910000',
+							drilldown: {
+								name: '低温运行',
+								x : 45,
+								categories: ['低温面积', '超高面积'],
+								data: [30, 15]
+								//color:'#a60000'
+							}
+						}, {
+							y: 125,
+							x: 170,
+							color: "#2f7ed8",
+							drilldown: {
+								name: '常温运行',
+								x : 125,
+								categories: ['常温面积', '超高面积'],
+								data: [80, 45]
+							}
+						}];
+		
+		
+			// Build the data arrays
+			var browserData = [];
+			var versionsData = [];
+			for (var i = 0; i < data.length; i++) {
+		
+				// add browser data
+				browserData.push({
+					name: categories[i],
+					y: data[i].y,
+					x: data[i].x,
+					color: data[i].color
+				});
+		
+				// add version data
+				for (var j = 0; j < data[i].drilldown.data.length; j++) {
+					var brightness = 0.2 - (j / data[i].drilldown.data.length) / 5 ;
+					versionsData.push({
+						name: data[i].drilldown.categories[j],
+						y: data[i].drilldown.data[j],
+						x: data[i].drilldown.x,
+						color: Highcharts.Color(data[i].color).brighten(brightness).get()
+					});
+				}
+			}
+		
+			// Create the chart
+			$('#container').highcharts({
+				chart: {
+					type: 'pie',
+					backgroundColor: null,  //背景图
+				events:{
+				  click:function(){
+						window.open( '../../38/pmNodeFinish1.html','','toolbar=no,  menubar=no, location=no, directories=no, status=no, scrollbars=yes, resizable=yes, width=900, height=500, left=200, top=100');
+						//alert('dddddd');  //事件
+					}
+				}
+
+					
+				},
+				title: {
+					text: '总供热面积',
+				    color: '#a60000'
+				},
+				yAxis: {
+					title: {
+						text: 'Total percent market share'
+					}
+				},
+				plotOptions: {
+					pie: {
+						shadow: true,
+						center: ['50%', '50%']
+					}
+				},
+				tooltip: {
+					valueSuffix: '%',
+					formatter : function(){
+						//alert(this.x);
+						var prop = this.y/this.point.x*100;
+						return this.point.name + ":" + this.y + "(" + prop.toFixed(2) + "%)个";
+					}
+				},
+				credits:{    //去掉网址
+			     enabled:false
+			},  
+				series: [{
+					name: '按项目情况',
+					data: browserData,
+					size: '60%',
+					dataLabels: {
+						formatter: function() {
+							return this.y > 5 ? this.point.name : null;
+						},
+						color: 'white',
+						distance: -30
+					}
+				}, {
+					name: '按领域统计',
+					data: versionsData,
+					size: '80%',
+					innerSize: '60%',
+					dataLabels: {
+						formatter: function() {
+							// display only if larger than 1
+							var prop = this.y/this.point.x*100;
+							return this.y > 1 ? '<b style="color:#000">'+ this.point.name +':</b> '+  '<span style="color:#000">'+ prop.toFixed(2) +'%'  : null  +':</span> ';
+						}
+					}
+				}]
+			});
+		});
+		</script>
+		</head>
+		<body>
+<script src="/Public/js/commjs/highcharts.js"></script>
+<div id="container" style="width: 600px; height: 200px; margin: 0 auto"></div>         
+</body>
+</html>

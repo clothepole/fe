@@ -1,0 +1,8 @@
+﻿[
+{"itemid":"<a href='#' onclick='FullInfo();'>1号楼</a>","ys":"怀柔区xxxxxxxx","ss":"300","jq":"20","sfl":"80","jq":"20","pm":"4","mc":"<a href='#'>京东南区</a>","xqmc":"A小区","xm":"<a href='#' onclick='FullInfo();'>A项目</a>","mj":"4000","fzr":"张三","lxfs":"13693107990","dress":"XXXXXX","sfd":"A锅炉房"},
+{"itemid":"<a href='#' data-toggle='modal'    data-target='#myModal22'>2号楼</a>","ys":"怀柔区xxxxxxxx","ss":"400","jq":"10","sfl":"70","jq":"20","pm":"3","mc":"京东北区","xqmc":"B小区","xm":"B项目","mj":"4000","fzr":"张三","lxfs":"13693107990","dress":"XXXXXX","sfd":"A换热站"},
+{"itemid":"<a href='#' '>3号楼</a>","ys":"怀柔区xxxxxxxx","ss":"200","jq":"15","sfl":"80","jq":"20","pm":"2","mc":"京西南区","xqmc":"C小区","xm":"C项目","mj":"4000","fzr":"张三","lxfs":"13693107990","dress":"XXXXXX","sfd":"B锅炉房"},
+{"itemid":"<a href='#' '>4号楼</a>","ys":"怀柔区xxxxxxxx","ss":"500","jq":"20","sfl":"40","jq":"20","mc":"京西北区","pm":"1","xqmc":"D小区","xm":"D项目","mj":"4000","fzr":"张三","lxfs":"13693107990","dress":"XXXXXX","sfd":"B换热站"}
+
+
+]

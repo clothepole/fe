@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="css/loginstyle.css">
+<style >
+.form{
+	margin-top:5px;
+	/*background-color:red;
+	height:44px;*/
+}
+.login{
+	float:left;
+}
+.password{
+	margin-left:35px;
+}
+.go{
+	margin-left:9px;
+	margin-top:-2px;
+	width:45px;
+	height:50px;
+}
+</style>
+<title>北燃供热收费系统</title>
+</head>
+<body >
+<center>
+  <div id="main">
+    <table border="0" id="textarea_di">
+      <tr>
+        <td height="95"></td>
+      </tr>
+      <tr>
+        <td><div class="form" style="width:550px;margin-left:-20px;float:left none">
+            <div class="login"><input type="text"   value="USERNAME"  onfocus="javascript:if(this.value == 'USERNAME') this.value = ''; this.style.color='gray';" onBlur="if(this.value == '') {this.value = 'USERNAME'; this.style.color = 'gray';}"></div>
+            <div class="login password" ><input type="password"  value="PASSWD"  onfocus="javascript:if(this.value == 'PASSWD') this.value = ''; this.style.color='gray';" onBlur="if(this.value == '') {this.value = 'PASSWD'; this.style.coloras = 'gray';}"></div>
+            <div class="login go" onClick="window.location='index.html'" ></div>
+            </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+</center>
+<script>
+function submitForm(){
+			$('#ff').form('submit');
+		}
+		function clearForm(){
+			$('#ff').form('clear');
+		}
+</script>
+</body>
+</html>

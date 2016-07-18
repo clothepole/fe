@@ -1,0 +1,337 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Bootstrap 模板</title>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="viewport" content="width=device-width, 
+                                     initial-scale=1.0, 
+                                     maximum-scale=2.0, 
+                                     user-scalable=yes">
+
+<!-- 引入 Bootstrap -->
+<link href="files/bootstrap-3.3.4/css/bootstrap.min.css" rel="stylesheet">
+<link href="files/bootstrap-table-1.7.0/bootstrap-table.min.css" rel="stylesheet">
+<link href="files/commcss/css/font-awesome.min.css" rel="stylesheet">
+<link href="files/buttons.css" rel="stylesheet">
+<style type="text/css">
+.columns {
+  padding: 5px;
+  border: 1px solid green;
+  width: 900px;
+  margin: 20px auto;
+
+  -webkit-column-count:3;
+  -moz-column-count:3;
+  -o-column-count:3;
+  -ms-column-count:3;
+  column-count:3;
+  
+  -webkit-column-gap: 2em;
+  -moz-column-gap: 2em;
+  -o-column-gap: 2em;
+  -ms-column-gap: 2em;
+  column-gap: 2em;
+  
+  -webkit-column-rule: 3px gray solid;
+  -moz-column-rule: 3px gray solid;
+  -o-column-rule: 3px gray solid;
+  -ms-column-rule: 3px gray solid;
+  column-rule: 3px gray solid; 
+
+}
+h2{
+  background: green;
+  padding: 10px;
+  color: #fff;
+
+}
+
+h2,
+
+p:nth-child(2n){
+  -webkit-？;
+  -moz-？;
+  -o-？;
+  -ms-？;
+  ？;
+}
+</style>
+<!-- HTML5 Shim 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
+<!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
+<!--[if lt IE 9]>
+         <script src="files/bootstrap-3.3.4/html5shiv.js"></script>
+         <script src="files/bootstrap-3.3.4/respond.min.js"></script>
+          <link href="files/commcss/font-awesome-ie7.min.css" rel="stylesheet">
+      <![endif]-->
+
+<!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
+<script defer  src="files/commjs/jquery.js" onLoad="alert('a')"></script><!---defer：推迟执行属性 async：异步执行属性-->
+<!-- 包括所有已编译的插件 -->
+<script async src="files/bootstrap-3.3.4/js/bootstrap.min.js" onLoad="alert('b')" ></script>
+<script src="files/bootstrap-table-1.7.0/bootstrap-table.min.js"></script>
+</head>
+<body>
+<div  class="columns"><!--Column-rule:    规定列之间的宽度、样式和颜色。 column-span:all:跨栏显示-->
+  <h2 style="column-span:all" >我要分列显示</h2>
+  <p>多列排版的布局，W3C特意给CSS3增加了一个多列布局模块（CSS Multi Column Layout Module）。它主要应用在文本的多列布局方面。对于文本的多列布局，我想大家并不陌生，因为报纸和杂志上我们随处可见，这种布局在报纸和杂志上都使用了几十年了，但需要在Web页面上实现文本的多列布局，正如下图所示。</p>
+  <p>多列排版的布局，W3C特意给CSS3增加了一个多列布局模块（CSS Multi Column Layout Module）。它主要应用在文本的多列布局方面。对于文本的多列布局，我想大家并不陌生，因为报纸和杂志上我们随处可见，这种布局在报纸和杂志上都使用了几十年了，但需要在Web页面上实现文本的多列布局，正如下图所示。</p>
+  <p>多列排版的布局，W3C特意给CSS3增加了一个多列布局模块（CSS Multi Column Layout Module）。它主要应用在文本的多列布局方面。对于文本的多列布局，我想大家并不陌生，因为报纸和杂志上我们随处可见，这种布局在报纸和杂志上都使用了几十年了，但需要在Web页面上实现文本的多列布局，正如下图所示。</p>
+</div>
+<span class="glyphicon glyphicon-search"></span>
+	<span class="glyphicon glyphicon-asterisk"></span>
+	<span class="glyphicon glyphicon-plus"></span>
+	<span class="glyphicon glyphicon-cloud"></span>
+   <button class="btn" type="button">基础按钮.btn</button>  
+   <button class="btn btn-default" type="button">默认按钮.btn-default</button> 
+   <button class="btn btn-primary" type="button">主要按钮.btn-primary</button> 
+   <button class="btn btn-success" type="button">成功按钮.btn-success</button> 
+   
+   <button class="btn btn-warning" type="button">警告按钮.btn-warning</button> 
+   <button class="btn btn-danger" type="button">危险按钮.btn-danger</button> 
+   <button class="btn btn-link" type="button">链接按钮.btn-link</button> 
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <div>默认图片</div>
+    </div>
+    <div class="col-sm-4">
+      <img  class="img-rounded" alt="140x140" src="http://placehold.it/140x140"> 
+        <div>圆角图片</div>
+    </div>
+    <div class="col-sm-4">
+      <img  class="img-circle" alt="140x140" src="http://placehold.it/140x140">
+        <div>圆形图片</div>
+    </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <img  class="img-thumbnail" alt="140x140" src="http://placehold.it/140x140"> 
+            <div>缩略图</div>
+        </div>
+        <div class="col-sm-6">
+          <img  class="img-responsive" alt="140x140" src="http://placehold.it/140x140" /> 
+          <div>响应式图片</div>
+        </div>
+      </div>
+  </div>
+</div> 
+
+
+<a href="http://www.nukewang.com/"  ref="external">慕课网</a><!-- href="zh":表示是中文 ref="external"：表示是一个外部链接-->
+<ol start="50" reversed>
+  <!--start="50":起始值 reversed：倒序从50，49，48-->
+  <li>coffee</li>
+  <li><span class="col-sm-4"><img   alt="140x140" src="http://placehold.it/140x140"></span>Tea</li>
+  <li>Milk</li>
+</ol>
+<menu type="toolbar" label="menu">
+  <li>
+    <input type="checkbox">
+    Red</li>
+  <li>
+    <input type="checkbox">
+    blue</li>
+</menu>
+<div>
+  <style type="text/css" scoped>
+<!--scoped：内嵌CSS属性 这个STYLE只是对这个DIV块进行样式-->
+       h1 { color:red;}
+       p {color:blue;}
+    </style>
+  <h1  hidden>this is a head</h1>
+  <p>this is a paragraph</p>
+</div>
+<iframe seamless sandbox=""  src="http://www.baidu.com">
+</iframe>
+<!--seamless:这个属性让框架没有边框和边距   sandbox:安全级别表示与所加的界面是异源它有四个属性，第一个允许提交表单，允许执行脚本及允许同源及允许外面的界面进行跳转--> 
+<im>
+如果是布局就用DIV <div class="div">；如果是与后台有关的就用section  <scetion id="scetion">
+新增加的全局属性：data-yourvalue hidden  Spellcheck:对你输入的内容进行语法纠错 tabindex=“1”：TAB键的顺序 contenteditable="true":可编辑的 desginMode用处不多
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<p><i class="icon-camera-retro icon-large"></i> icon-camera-retro</p>
+<p><i class="icon-camera-retro icon-2x"></i> icon-camera-retro</p>
+<p><i class="icon-camera-retro icon-3x"></i> icon-camera-retro</p>-->
+
+<form>
+  <input type="week" class="form-control" placeholder="文本输入">
+  <div class="input-group"> <span class="input-group-addon"><i class="icon-envelope"></i></span>
+    <input class="form-control" type="text" placeholder="Email address">
+  </div>
+  <div class="input-group"> <span class="input-group-addon"><i class="icon-">&#xf112;</i></span>
+    <input type="datetime" class="form-control" placeholder="twitterhandle">
+  </div>
+</form>
+<ul class="icons">
+  <li><i class="icon-ok"></i> Lists</li>
+  <li><i class="icon-ok"></i> Buttons</li>
+  <li><i class="icon-ok"></i> Button groups</li>
+  <li><i class="icon-ok"></i> Navigation</li>
+  <li><i class="icon-ok"></i> Prepended form inputs</li>
+</ul>
+<ul class="nav nav-list">
+  <li class="active button-large"><a href="#"><i class="icon-home"></i> Home</a></li>
+  <li  class="alert-link"><a href="#"><i class="icon-book"></i> Library</a></li>
+  <li ><a href="#"><i class="icon-pencil"></i> Applications</a></li>
+  <li><a href="#"><i class="icon-cogs"></i> Settings</a></li>
+</ul>
+<p><i class="icon-camera-retro icon-4x"></i> icon-camera-retro</p>
+<div class="btn-group open"> <a href="#3" class="button button-primary button-giant">Go</a> <a href="#" class="button button-caution button-large ">Go</a> <a href="#" class="button button-raised button-pill  button-inverse ">Visit Us!</a>
+  <button class="button button-raised button-action button-circle button-jumbo"><i class="icon-user "></i></button>
+  <a class="btn btn-primary" href="#"><i class="icon-user"></i> User</a> <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"> <span class="icon-caret-down"></span></a>
+  <ul class="dropdown-menu">
+    <li><a href="#"><i class="icon-pencil"></i> Edit</a></li>
+    <li><a href="#"><i class="icon-trash"></i> Delete</a></li>
+    <li><a href="#"><i class="icon-ban-circle"></i> Ban</a></li>
+    <li class="divider"></li>
+    <li><a href="#"><i class="i"></i> Make admin</a></li>
+  </ul>
+  </a> </div>
+<a class="btn btn-primary btn-group-lg"  href="#"> <i class="icon-refresh icon-spin"></i> Synchronizing Content...</a> <a class="btn btn-large btn-primary" href="#"><i class="icon-comment"></i> Comment</a>
+<div class="container">
+<h1>Hello, world!</h1>
+<p><i class="icon-camera-retro icon-3x"></i> icon-camera-retro</p>
+<div class="row">
+  <div class="col-sm-3 col-md-6 col-lg-8"  
+         style="background-color: #dedef8; 
+         box-shadow: inset 1px -1px 1px #444, 
+         inset -1px 1px 1px #444;">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do 
+      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut 
+      enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+      nisi ut aliquip ex ea commodo consequat. </p>
+    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem 
+      accusantium doloremque laudantium, totam rem aperiam, eaque ipsa 
+      quae ab illo inventore veritatis et quasi architecto beatae vitae 
+      dicta sunt explicabo. </p>
+  </div>
+  <div class="col-sm-9 col-md-6 col-lg-4" 
+         style="background-color: #dedef8;
+         box-shadow: inset 1px -1px 1px #444, 
+         inset -1px 1px 1px #444;">
+    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem 
+      accusantium doloremque laudantium. </p>
+    <p> Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, 
+      consectetur, adipisci velit, sed quia non numquam eius modi 
+      tempora incidunt ut labore et dolore magnam aliquam quaerat 
+      voluptatem. </p>
+  </div>
+</div>
+<div class="table-responsive">
+  <table data-toggle="table" id="table-format" class="table table-striped table-bordered table-hover table-condensed" data-pagination="true" data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1">
+    <caption>
+    响应式表格布局
+    </caption>
+    <thead>
+      <tr>
+        <th  data-halign="center" data-formatter="nameFormatter"><i class="glyphicon glyphicon-star">产品</th>
+        <th data-halign="right" >付款日期</th>
+        <th data-valign="top">状态</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>产品1</td>
+        <td>23/11/2013</td>
+        <td>待发货</td>
+      </tr>
+      <tr>
+        <td>产品2</td>
+        <td>10/11/2013</td>
+        <td>发货中</td>
+      </tr>
+      <tr>
+        <td>产品3</td>
+        <td>20/10/2013</td>
+        <td>待确认</td>
+      </tr>
+      <tr>
+        <td>产品4</td>
+        <td>20/10/2013</td>
+        <td>已退货</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div id="transform-buttons" class="btn-group btn-default">
+  <button class="btn btn-default" id="transform"> <i class="glyphicon glyphicon-transfer"></i> <span data-zh="转换" data-es="Transformar">Transform</span> </button>
+  <button class="btn btn-default" id="destroy"> <i class="glyphicon glyphicon-trash"></i> <span data-zh="摧毁" data-es="Destruir">Destroy</span> </button>
+</div>
+<table id="table-transform" class="table-striped" data-toolbar="#transform-buttons">
+  <caption>
+  响应式表格布局
+  </caption>
+  <thead>
+    <tr>
+      <th data-formatter="nameFormatter">Item ID</th>
+      <th>Item Name</th>
+      <th data-formatter="nameFormatter">Item Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr id="tr_id_1" class="tr-class-1">
+      <td id="td_id_1" class="td-class-1">1</td>
+      <td>Item 1</td>
+      <td>$1</td>
+    </tr>
+    <tr id="tr_id_2" class="tr-class-2">
+      <td id="td_id_2" class="td-class-2">2</td>
+      <td>Item 2</td>
+      <td>$2</td>
+    </tr>
+    <tr id="tr_id_3" class="tr-class-3">
+      <td id="td_id_3" class="td-class-3">3</td>
+      <td>Item 3</td>
+      <td>$3</td>
+    </tr>
+    <tr id="tr_id_4" class="tr-class-4">
+      <td id="td_id_4" class="td-class-4">4</td>
+      <td>Item 4</td>
+      <td>$4</td>
+    </tr>
+    <tr id="tr_id_5" class="tr-class-5">
+      <td id="td_id_5" class="td-class-5">5</td>
+      <td>Item 5</td>
+      <td>$5</td>
+    </tr>
+  </tbody>
+</table>
+<script>
+
+    function nameFormatter(value, row) {
+        var icon = row.id % 2 === 0 ? 'glyphicon-star' : 'glyphicon-star-empty'
+
+        return '<i class="glyphicon ' + icon + '"></i> ' + value;
+    }
+
+    function priceFormatter(value) {
+        // 16777215 == ffffff in decimal
+        var color = '#'+Math.floor(Math.random() * 6777215).toString(16);
+        return '<div  style="color: ' + color + '">' +
+                '<i class="glyphicon glyphicon-usd"></i>' +
+                value.substring(1) +
+                '</div>';
+    }
+
+    $(function () {
+        var $table = $('#table-transform');
+        $('#transform').click(function () {
+            $table.bootstrapTable();
+        });
+        $('#destroy').click(function () {
+            $table.bootstrapTable('destroy');
+        });
+    });
+</script>
+</body>
+</html>

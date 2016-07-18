@@ -1,0 +1,219 @@
+<!DOCTYPE HTML>
+<html>
+		<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>区域项目部各年度收费情况对比图</title>
+
+		<link rel="stylesheet" type="text/css" href="../../themes/icon.css">
+		<link rel="stylesheet" type="text/css" href="../../demo/demo.css">
+		<style type="text/css">
+body {
+	background-color: #FFF;
+}
+</style>
+		<script type="text/javascript" src="../../js/jquery-1.7.2.min.js"></script>
+
+		
+		<script type="text/javascript">
+$(function () {
+    $('#container').highcharts({
+        chart: {
+                type: 'column',
+			    backgroundColor: null,
+				events:{
+				  	click:function(){
+						window.open( '../pie-legend/workRy21.htm','','toolbar=no,  menubar=no, location=no, directories=no, status=no, scrollbars=yes, resizable=yes, width=900, height=500, left=200, top=100');
+				//alert('dddddd');  //事件
+					}
+				}
+				
+            },
+        title: {
+            text: '区域项目部各年度收费情况对比图（按金额）'
+        },
+        xAxis: {
+             categories: ['2012年度','2013年度', '2014年度', '2015年度', '2016年度']
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: '收费情况（金额）'
+            },
+            stackLabels: {
+                enabled: true,
+                style: {
+                    fontWeight: 'bold',
+                    color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+                }
+            }
+        },
+       /* legend: {    对图例的定位
+            align: 'right',
+            x: -30,
+            verticalAlign: 'top',
+            y: 25,
+            floating: true,
+            backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
+            borderColor: '#CCC',
+            borderWidth: 1,
+            shadow: false
+        },*/
+		
+            series: [{
+				id: 'weishou',
+                name: '已收金额（万元）',
+                data: [80, 70, 89, 85, 90],
+                stack: 'male'
+            }, {
+                name: '未收金额（万元）',
+                data: [20, 47, 58, 18, 50],
+                stack: 'male'
+            }],
+              tooltip: {
+                formatter: function() {
+                    return '<b>'+ this.x +'</b><br/>'+
+                        this.series.name +': '+ this.y +'<br/>'+
+                        'Total: '+ this.point.stackTotal+'<br/>'+'收费率：';
+                }
+            },
+         plotOptions: {
+                column: {
+                    stacking: 'normal',
+					dataLabels: {
+                        enabled: true,
+						color:'#ffffff'	
+                    },					
+				events:{
+				  	click:function(){
+						window.open( '../pie-legend/workRy21.htm','','toolbar=no,  menubar=no, location=no, directories=no, status=no, scrollbars=yes, resizable=yes, width=900, height=600, left=200, top=100');
+				//alert('dddddd');  //事件
+					}
+				}
+				
+                }
+            },
+       credits:{    //去掉网址
+			     enabled:false
+			}
+        });
+    });
+		
+		
+		
+		
+		
+		
+		
+	/*	
+		
+		
+		
+$(function () {
+        $('#container').highcharts({
+    
+            chart: {
+                type: 'column',
+			    backgroundColor: null,
+				events:{
+				  	click:function(){
+						window.open( '../../38/pmNew1.html','','toolbar=no,  menubar=no, location=no, directories=no, status=no, scrollbars=yes, resizable=yes, width=900, height=500, left=200, top=100');
+				//alert('dddddd');  //事件
+					}
+				}
+				
+            },
+    
+            title: {
+                text: '公司各年度收费情况对比图（按金额）'
+            },
+    
+            xAxis: {
+                categories: ['2012年度','2013年度', '2014年度', '2015年度', '2016年度']
+            },
+    
+            yAxis: {
+                allowDecimals: false,
+                min: 0,
+                title: {
+                    text: '收费情况'
+                }
+            },
+    
+            tooltip: {
+                formatter: function() {
+                    return '<b>'+ this.x +'</b><br/>'+
+                        this.series.name +': '+ this.y +'<br/>'+
+                        'Total: '+ this.point.stackTotal;
+                }
+            },
+    
+            plotOptions: {
+                column: {
+                    stacking: 'normal',
+					dataLabels: {
+                        enabled: true,
+						color:'#ffffff'	
+                    },					
+				events:{
+				  	click:function(){
+						window.open( '../../38/workQk1.html','','toolbar=no,  menubar=no, location=no, directories=no, status=no, scrollbars=yes, resizable=yes, width=900, height=500, left=200, top=100');
+				//alert('dddddd');  //事件
+					}
+				}
+				
+                }
+            },
+    credits:{    //去掉网址
+			     enabled:false
+			},  
+            series: [{
+                name: '应收金额（万元）',
+                data: [80, 70, 89, 85, 90],
+                stack: 'male'
+            }, {
+                name: '实收金额（万元）',
+                data: [40, 47, 58, 62, 50],
+                stack: 'male'
+            }, {
+                name: '收费率(%)',
+                data: [15, 9, 12, 5, 8],
+                stack: 'male'
+            }]
+        });
+    });
+    
+*/
+		</script>
+		</head>
+		<body>
+<script src="../../js/highcharts.js"></script>
+<!--div class="panel-search" style="padding:10px;"> 方式:
+    <select class="easyui-combobox" panelHeight="auto" style="width:100px">
+    <option value="java">项目类型</option>
+    <option value="c">项目类型</option>
+    <option value="basic">项目类型</option>
+    <option value="perl">项目类型</option>
+     </select>
+     &nbsp;&nbsp;部门:
+    <select class="easyui-combobox" panelHeight="auto" style="width:100px">
+    <option value="java">对地勘测</option>
+    <option value="c"></option>
+    <option value="basic"></option>
+    <option value="perl"></option>
+  </select>
+          <a href="#" class="easyui-linkbutton" iconCls="icon-search">统计</a> </div-->
+<div width="100%"  border="0" style="padding:2px;">
+          <!--tr class="ybp_di2">
+    <td colspan="4" class="ybp_di">&nbsp;完成率及延迟情况：&nbsp;&nbsp;&nbsp;
+              <button style=" width: 12px; height: 12px; border: 1px solid #ffffff; background-color: #55bf3b; margin: 2px;"></button>
+              已完成&nbsp;
+              <button style="width: 12px; height: 12px; border: 1px solid #ffffff; background-color: #dddf0d; margin: 2px;"></button>
+              延迟&nbsp;
+              <button style="width: 12px; height: 12px; border: 1px solid #ffffff; background-color: #df5353; margin: 2px;"></button>
+              严重延迟 </td>
+  </tr--->
+         <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+          
+        </div>
+</body>
+</html>

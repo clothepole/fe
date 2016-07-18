@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>培训个人信息系统数据中心</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, 
+                                     initial-scale=1.0, 
+                                     maximum-scale=1.0, 
+                                     user-scalable=yes">
+
+<!-- 引入 Bootstrap -->
+<link href="../files/commcss/custom.css" rel="stylesheet">
+<link href="../files/bootstrap-table-1.7.0/bootstrap-table.min.css" rel="stylesheet">
+<link href="../files/commcss/css/font-awesome.min.css" rel="stylesheet">
+<link href="../files/buttons.css" rel="stylesheet">
+<style>
+.coolscrollbar {
+	scrollbar-arrow-color: yellow;
+	scrollbar-base-color: lightsalmon;
+}
+</style>
+<!-- HTML5 Shim 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
+<!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
+<!--[if lt IE 9]>
+      	 <link href="files/icons/css/font-awesome-ie7.min.css" rel="stylesheet">
+         <script src="files/bootstrap-3.3.4/html5shiv.js"></script>
+         <script src="files/bootstrap-3.3.4/respond.min.js"></script>
+      <![endif]-->
+
+<!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
+<script  src="../files/commjs/jquery.js"></script>
+<!-- 包括所有已编译的插件 -->
+<script  src="../files/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+<script src="../files/bootstrap-table-1.7.0/bootstrap-table.min.js"></script>
+<script src="../files/bootstrap-table-1.7.0/bootstrap-table-filter.min.js"></script>
+<script src="../files/bootstrap-table-export/bootstrap-table-export.js"></script>
+<script src="../files/bootstrap-table-export/tableExport.js"></script>
+<script src="../files/bootstrap-table-export/jquery.base64.js"></script>
+<script src="../files/bootstrap-table-export/html2canvas.js"></script>
+<script src="../files/bootstrap-table-export/jspdf/libs/sprintf.js"></script>
+<script src="../files/bootstrap-table-export/jspdf/jspdf.js"></script>
+<script src="../files/bootstrap-table-export/jspdf/libs/base64.js"></script>
+<script language="JavaScript" type="text/javascript" src="../files/commjs/topLink.js"></script>
+<style>
+body {
+	font-size: 12px;
+	background-image: url(../images/bg.jpg);
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	color: #333333;
+	margin-top: 0px;
+	margin-left: 0px;
+	}
+.logo {
+	background-position: 10px 3px;
+	background-image: url(../images/top-logo.png);
+	background-repeat: no-repeat;
+}
+</style>
+<script type="text/javascript">
+function MM_jumpMenuGo(objId,targ,restore){ //v9.0
+  var selObj = null;  with (document) { 
+  if (getElementById) selObj = getElementById(objId);
+  if (selObj) eval(targ+".location='"+selObj.options[selObj.selectedIndex].value+"'");
+  if (restore) selObj.selectedIndex=0; }
+}
+</script>
+</head>
+<div style="margin-left:100px; margin-top:10px; border:1px; border-bottom-color:#96C; border:#999">
+<form class="form-inline" role="form">
+   <div class="form-group">
+      <label class="sr-only" for="name">名称</label>
+      <input type="text" class="form-control" id="name" 
+         placeholder="请输入文件格式为EXC">
+   </div>
+   <div class="form-group">
+      <label class="sr-only" for="inputfile">文件输入</label>
+      <input type="file" id="inputfile">
+   </div>
+  
+</form>
+
+</div>
+
+<div style="　height:45px; margin-right:40px; margin-top:10px; text-align:right ">
+ &nbsp;&nbsp;<a class="btn btn-large btn-info" href="#" onclick="javascritp:window.alert('已成功导入!');"><i class="icon-upload-alt"></i>&nbsp;&nbsp;导入&nbsp;&nbsp;</a>
+ &nbsp;<a class="btn btn-large btn-primary btn-warning" href="#" onClick="window.close();"><i class="icon-remove"></i>&nbsp;&nbsp;关闭&nbsp;&nbsp;</a>
+</div>
+
+<script>
+		function submitForm(){
+			$('#ff').form('submit');
+		}
+		function clearForm(){
+			$('#ff').form('clear');
+		}
+	</script>
+</body></html>
+<script type="text/javascript">
+   $(function () { 
+      $('#collapseFour').on('show.bs.collapse', function () {   // 执行一些动作...  在调用 show 方法后触发该事件。还有shown/hide/hidden.bs.collapse 等方法。
+         alert('嘿，当您展开时会提示本警告');})
+   });
+</script>
+</body>
+</html>

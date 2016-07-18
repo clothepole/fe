@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>新增项目统计图</title>
+		<script type="text/javascript" src="../../js/jquery-1.7.2.min.js"></script>
+		<script src="../../js/highcharts.js"></script>
+		<script type="text/javascript">
+		 function cssSet(d){
+			if(d==1){
+				$('#sss').attr('href','../../themes/gray/easyui.css');			
+			}
+			if(d==2){
+				$('#sss').attr('href','../../themes/default/easyui.css');
+			}
+			
+			if(d==3){
+				$('#sss').attr('href','../../themes/black/easyui.css');
+			}
+			if(d==4){
+				$('#sss').attr('href','../../themes/metro/easyui.css');
+			}
+		 }
+		</script>
+		<script type="text/javascript">
+		var str = window.location.href.split("?")[1];
+		$(function () {
+	        $('#container').highcharts({
+	            chart: {
+	                type: 'column',
+				    backgroundColor: null,
+					events:{
+					  	click:function(){
+							window.open( 'pmNew.htm','','toolbar=no,  menubar=no, location=no, directories=no, status=no, scrollbars=yes, resizable=yes, width=900, height=500, left=200, top=100');
+						}
+					},
+		        	height : parseInt(str,10)-16
+	            },	    
+	            title: {
+	                text: '新增项目统计图'
+	            },	    
+	            xAxis: {
+	                categories: ['1月', '2月', '3月', '4月', '5月','六月'],
+	                title: {
+		            	 text: '月份'
+	                }
+	            },
+	            yAxis: {
+	                allowDecimals: false,
+	                min: 0,
+	                title: {
+	                    text: '新增项目的个数'
+	                },
+	                lineWidth : 1
+	            },	    
+	            tooltip: {   //用于当标放在对应节点上的数据
+	                formatter: function() {
+	                    return '<b>'+ this.x +'</b><br/>'+
+	                        this.series.name +': '+ this.y +'<br/>'+
+	                        'Total: '+ this.point.stackTotal;
+	                }
+	            },	    
+	            plotOptions: {
+	                column: {     //&nbsp;定义为条形图上方  line定义为折线图上方
+	                    stacking: 'normal',					
+						dataLabels: {
+	                        enabled: true,
+							color:'#ffffff'	
+	                    },					
+						events:{
+						  	click:function(){
+								window.open( 'pmNew.htm','','toolbar=no,  menubar=no, location=no, directories=no, status=no, scrollbars=yes, resizable=yes, width=900, height=500, left=200, top=100');
+							}
+						}
+	                }
+	            },
+	    		credits:{    //去掉网址
+				     enabled:false
+				}, 			    
+	            series: [{
+	                name: '事务性',
+	                data: [8, 4, 7, 5, 4],
+	                stack: 'male'
+	            }, {
+	                name: '批产',
+	                data: [6, 7, 9, 10, 15],
+	                stack: 'male'
+	            }, {
+	                name: '科研',
+	                data: [15, 9, 12, 5, 8],
+	                stack: 'male'
+	            }]
+	        });
+	    });
+		</script>
+	</head>
+	<body>
+		<div id="container" style="margin: 0 auto"></div>
+	</body>
+</html>

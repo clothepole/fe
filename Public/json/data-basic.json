@@ -1,0 +1,8 @@
+﻿[
+{"itemid":"<a href='#' data-toggle='modal'    data-target='#myModal1'>东南区</a>","ys":"400","ss":"300","jq":"20","sfl":"80","jq":"20","pm":"4","xmmc":"<a href='#' data-toggle='modal'    data-target='#myModalqy''>A项目</a>"},
+{"itemid":"<a href='#' '>西南区</a>","ys":"500","ss":"300","jq":"10","sfl":"70","jq":"20","pm":"3","xmmc":"<a href='#' '>B项目</a>"},
+{"itemid":"<a href='#' '>东北区</a>","ys":"300","ss":"200","jq":"15","sfl":"80","jq":"20","pm":"2","xmmc":"C项目"},
+{"itemid":"<a href='#' '>西北区</a>","ys":"800","ss":"300","jq":"20","sfl":"40","jq":"20","pm":"1","xmmc":"D项目"}
+
+
+]

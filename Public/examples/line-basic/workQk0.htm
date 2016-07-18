@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<html>
+		<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>每周用水、电、气、热对比图</title>
+		<script type="text/javascript" src="/Public/js/commjs/jquery.js"></script>
+		<script type="text/javascript">
+ function cssSet(d){
+	if(d==1){
+		$('#sss').attr('href','../../themes/gray/easyui.css');			
+	}
+	if(d==2){
+		$('#sss').attr('href','../../themes/default/easyui.css');
+	}
+	
+	if(d==3){
+		$('#sss').attr('href','../../themes/black/easyui.css');
+	}
+	if(d==4){
+		$('#sss').attr('href','../../themes/metro/easyui.css');
+	}
+ }
+</script>
+		<script type="text/javascript">
+$(function () {
+        $('#container').highcharts({
+			 chart: {
+             
+				backgroundColor: null,
+				events:{
+				  	click:function(){
+						window.open( '../../38/workQk1.html','','toolbar=no,  menubar=no, location=no, directories=no, status=no, scrollbars=yes, resizable=yes, width=900, height=500, left=200, top=100');
+				//alert('dddddd');  //事件
+					}
+				}
+             
+            },
+            title: {
+                text: '水、电、气、热',
+                x: 0 //center
+            },
+           /* subtitle: {
+                text: 'Source: WorldClimate.com',
+                x: -20
+            },*/
+            xAxis: {
+                categories: ['一天', '二天', '三天', '四天', '五天', '六天','七天']
+            },
+			plotOptions: {
+                line: {                    				
+					dataLabels: {
+                        enabled: true						
+                    },
+					enableMouseTraching: false
+				}
+			 },
+            yAxis: {
+                title: {
+                    text: ''
+                },
+                plotLines: [{
+                    value: 0,
+                    width: 1,
+                    color: '#808080'
+                }]
+            },
+			
+            tooltip: {
+                valueSuffix: ''
+            },
+			
+			credits:{    //去掉网址
+			     enabled:false
+			},  
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'middle',
+                borderWidth: 0
+            },
+			
+            series: [{
+                name: '用气量[m³]',
+                data: [60, 45, 75, 30, 40, 12, 35]
+            }, {
+                name: '用电量[KWh]',
+                data: [40, 60, 85, 60, 80, 30,50]
+            }, {
+                name: '用热量[GJ]',
+                data: [10, 30, 60, 40, 50, 60, 70]
+            }, {
+                name: '用水量[m³]',
+                data: [20, 25, 40, 20, 12, 5, 25]
+            }]
+        });
+    });
+    
+
+		</script>
+		</head>
+		<body>
+        <script src="/Public/js/commjs/highcharts.js"></script>
+<div id="container" style="min-width: 210px; height: 200px; margin: 0 auto"></div>
+</body>
+</html>

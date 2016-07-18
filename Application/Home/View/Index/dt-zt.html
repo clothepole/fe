@@ -1,0 +1,180 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>大区运行情况</title>
+    <include file="base-file" />
+<style>
+body {
+	background-color: #fff;	
+	margin-top: 5px;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: auto;
+	padding: 20px;
+}
+</style>
+</head>
+<body>
+<div class="row">
+  <div class=" col-md-6 ui-sortable " style="padding-left:30px;">
+    <div class="row">      
+      <table id="table" 
+      data-striped="true"  
+      data-click-to-select="true"
+      data-toggle="table" 
+      data-height="420"        
+      data-url="/public/json/dd-data-basic.json"
+      >
+        <thead  class="thead" >
+          <tr>
+           <th ></th>
+        <!--    <th data-align="center" data-footer-formatter="totalTextFormatter" data-formatter="operateFormatter" data-events="operateEvents">  操作</th> -->
+           <th data-field="jcsj" data-align="center"  data-sortable="true">监测数据</th>
+           <th data-field="zr" >今日</th>
+           <th data-field="jr" >昨日</th> 
+          </tr>
+        </thead>
+      </table>
+    </div>
+  </div>
+  <div class="col-md-6 ui-sortable" style="padding-left:45px;">
+   <div class="row container-fluid"> 
+    <iframe  name="main"  marginheight="0" height="200px" frameborder="0" marginheight="" src="/public/examples/pie-donut/projectDonutPie0.htm" width="100%"></iframe>
+    </div>
+    <div class="row container-fluid" style="padding:15px;"> 
+     <iframe  name="main" marginheight="0" height="200px" frameborder="0" src="/public/examples/line-basic/workQk0.htm" width="100%"></iframe>
+    </div>   
+  </div>
+</div>
+<div class="row">
+  <div class=" col-md-12 ui-sortable " >
+      <table id="table" 
+      data-striped="true"  
+      data-click-to-select="true"
+      data-toggle="table" 
+      data-height="400"  
+      data-show-footer="true"
+      data-url="/public/json/dd-data-basic.json"
+      data-pagination="true"
+      data-page-size="15"
+     >
+        <thead  class="thead" >
+          <tr>
+           <th data-field="xmb" data-align="center"  data-sortable="true">项目部</th>
+           <th data-field="glzs" >锅炉房总数</th>
+           <th data-field="grmj" >供热面积</th> 
+           <th data-field="grl" >供热量</th> 
+           <th data-field="hql" >供热面积</th> 
+           <th data-field="hdl" >计划供热量</th> 
+           <th data-field="ysl" >实际供热量</th> 
+           <th data-field="lxfs" >预计供热量</th> 
+           <th data-field="lxfs" >累计供热量</th> 
+          </tr>
+        </thead>
+      </table>
+  </div>
+</div>
+<script type="text/javascript">
+function totalTextFormatter(data) {
+        return 'Total';
+    }
+    function totalFormatter(data) {
+        
+        return data.length;
+    }
+    function sumFormatter(data) {
+        field = this.field;
+        var total_sum = data.reduce(function(sum, row) {
+            return (sum) + (row[field] || 0);
+        }, 0);
+        return total_sum;
+    }
+        // 图表
+        function detailFormatter(index, row, $detail) {
+            var pID = row.id;
+            buildTable($detail.html('<table></table>').find('table'), pID);
+        }
+        function buildTable($ext, id) {
+            $ext.bootstrapTable({
+                url: 'data-tree-table-son-'+id+'.json',
+                showHeader: false,
+                clickToSelect:true,
+                columns: [
+                    {
+                        field: 'state',
+                        checkbox: true
+
+                    },{
+                        field: 'name',
+                    }
+                ]
+            });
+        }           
+</script>
+
+
+<script>
+    function operateFormatter(value, row, index) {
+        return [
+           /* '<a class="like" href="javascript:void(0)" title="Like">',
+                '<i class="glyphicon glyphicon-heart"></i>',
+            '</a>',
+            '<a class="edit ml10" href="javascript:void(0)" title="Edit">',
+                '<i class="glyphicon glyphicon-edit"></i>',
+            '</a>',*/
+            '<a class="remove ml10" href="javascript:void(0)" title="Remove">',
+                '<i class=" icon-remove"></i>',
+            '</a>'
+        ].join('');
+    }
+
+    window.operateEvents = {
+      /*  'click .like': function (e, value, row, index) {
+            alert('You click like icon, row: ' + JSON.stringify(row));
+            console.log(value, row, index);
+        },
+        'click .edit': function (e, value, row, index) {
+            alert('You click edit icon, row: ' + JSON.stringify(row));
+            console.log(value, row, index);
+        },*/
+        'click .remove': function (e, value, row, index) {
+            alert('你确定要删除此条信息吗？');
+        }
+    };
+</script>
+<script>
+var $table = $('#table');
+function operateFormatter(value, row, index) {
+        return [
+            '<a class="modify" data-toggle="modal" data-target="#myModal7 href="#" title="修改">',
+            '<i class="icon-edit icon-large" style="font-size:14px;color:#71C971;"></i>',
+            '</a >&nbsp;&nbsp;&nbsp;&nbsp;',
+            '<a class="remove" href="javascript:;" title="删除">',
+            '<i class="icon-trash" style="font-size:14px;color:#F0706D;"></i>',
+            '</a >'
+        ].join('');
+    }
+window.operateEvents = {
+       /* 'click .modify': function (e, value, row, index) {
+            alert('You click like action, row: ' + JSON.stringify(row));
+        },*/
+        'click .remove': function (e, value, row, index) {
+            $table.bootstrapTable('remove', {
+                field: 'itemid',
+                values: [row.itemid]
+            });
+        }
+    };   
+</script>
+<script type="text/javascript">
+    function FullInfo(){ 
+   window.showModalDialog("companyInfo.html","","dialogWidth:1000px; dialogHeight:350px;dialogLeft:400px; dialogTop:300px;  scroll:no;status:no") 
+   } 
+   
+   $(function () { 
+      $('#collapseFour').on('show.bs.collapse', function () {   // 执行一些动作...  在调用 show 方法后触发该事件。还有shown/hide/hidden.bs.collapse 等方法。
+         alert('嘿，当您展开时会提示本警告');})
+   });
+</script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>项目执行情况监控图</title>
+		
+		<script type="text/javascript" src="../../js/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="../../js/jquery.easyui.min.js"></script>
+		<script src="../../js/highcharts.js"></script>
+		<script type="text/javascript">
+		$(function () {
+			var str = window.location.href.split("?")[1];
+	        $('#container').highcharts({
+	            chart: {
+	                type: 'bar',	
+					events:{
+					  	click:function(){
+							window.parent.openDialog("执行情况监控",600,500,'examples/bar-basic/pmJk.htm');
+						}
+					},
+					height : parseInt(str,10)-16     
+	            },
+	            title: {
+	                text: '项目执行情况监控图'
+	            },
+	            xAxis: {
+	                categories: [ '设备冲突', '人员冲突', '任务延期未启动'],
+	                title: {
+	                    text: null
+	                }
+	            },
+				 plotOptions: {
+	                bar: {
+	                    dataLabels: {
+	                        enabled: true
+	                    }
+	                }
+				 },
+	             yAxis: {
+	                min: 0,
+	                title: {
+	                    text: '个数（个）'
+	                },
+	                labels: {
+	                    overflow: 'justify'
+	                },
+	                lineWidth : 1
+	            },	            
+	            credits: {
+	                enabled: false,
+					shadow: true
+	            },
+	            series: [{
+	                name: "统计时间：项目启动日-至今",
+	                data: [ 15, 10, 5]
+	            }]
+	        });
+	    });
+		</script>
+	</head>
+	<body>
+		<div id="container" style="margin: 0 auto"></div>
+	</body>
+</html>

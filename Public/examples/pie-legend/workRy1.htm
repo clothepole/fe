@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>部门人员工时分布</title>
+		<script type="text/javascript" src="../../js/jquery-1.7.2.min.js"></script>
+		<script src="../../js/highcharts.js"></script>
+		<script type="text/javascript">
+		 function cssSet(d){
+			if(d==1){
+				$('#sss').attr('href','../../themes/gray/easyui.css');			
+			}
+			if(d==2){
+				$('#sss').attr('href','../../themes/default/easyui.css');
+			}
+			
+			if(d==3){
+				$('#sss').attr('href','../../themes/black/easyui.css');
+			}
+			if(d==4){
+				$('#sss').attr('href','../../themes/metro/easyui.css');
+			}
+		 }
+		</script>
+		<script type="text/javascript">
+		$(function () {
+		    var chart;
+		    var str = window.location.href.split("?")[1];
+		    $(document).ready(function () {
+		    	
+		    	// Build the chart
+		        $('#container').highcharts({
+		            chart: {
+		                plotBackgroundColor: null,
+		                plotBorderWidth: null,
+						backgroundColor: null,
+		                plotShadow: false,
+			        	height : parseInt(str,10)-16		             
+		            },
+					colors:[ '#2f7ed8', '#0d233a','#a60000'],
+		            title: {
+		                text: '部门人员工时分布'
+		            },
+		            tooltip: {
+		        	    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+		            },
+		            plotOptions: {
+		                pie: {
+		                    allowPointSelect: true,
+		                    cursor: 'pointer',
+		                    dataLabels: {
+		                        enabled: true,
+								formatter: function(){
+									var temp = ""+this.point.percentage.toFixed(0,6);
+								    return temp +"%";
+								},			
+								distance : -30
+		                    },
+		                    showInLegend: true,	
+							events:{
+							  	click:function(){
+									window.open( 'workRy.htm','','toolbar=no,  menubar=no, location=no, directories=no, status=no, scrollbars=yes, resizable=yes, width=900, height=500, left=200, top=100');
+								}
+							}
+		                }
+		            },
+					credits:{    //去掉网址
+					     enabled:false
+					},
+		            series: [{
+		                type: 'pie',
+		                name: '人员总工时占比：',
+		                data: [
+		                    ['科研类',   48.0],
+		                    ['批产类',       26.8],
+		                    {
+		                        name: '事务类',
+		                        y: 12.8,
+		                        sliced: true,
+		                        selected: true
+		                    }
+		                ]
+		            }]
+		        });
+		    });
+		    
+		});
+		</script>
+	</head>
+	<body>
+		<div id="container"  style="margin: 0 auto"></div>
+	</body>
+</html>

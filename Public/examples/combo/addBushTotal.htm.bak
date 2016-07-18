@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>预算投入总额统计图</title>
+
+		<script type="text/javascript" src="../../js/jquery-1.8.2.min.js"></script>
+		<script src="../../js/highcharts.js"></script>
+		<script src="../../js/modules/exporting.js"></script>
+		<script type="text/javascript">
+		$(function () {
+			$('#container').highcharts({
+				chart: {
+					width : 600,
+					height : 400
+				},
+				title: {
+					text: '预算投入总额统计图'
+				},
+				xAxis: {
+					categories: ['2008', '2009', '2010', '2011', '2012','2013']
+				},
+				yAxis :{
+					title :{
+						text : '金额（百万）'
+					},
+					lineWidth : 1
+				},
+				tooltip: {
+					formatter: function() {
+						var s;
+						if (this.point.name) { // the pie chart
+							var prop = (this.point.y/this.point.x * 100).toFixed(2);
+							s = '' + this.point.name +': ' + prop + '('+ this.point.y +'百万)';
+						} else {
+							s = '' + this.x  +': '+ this.y;
+						}
+						return s;
+					}
+				},
+				labels: {
+					items: [{
+						html: '<b>投入占比</b>',
+						style: {
+							left: '20px',
+							top: '-15px',
+							color: 'black'
+						}
+					}]
+				},
+				series: [{
+					type: 'column',
+					name: '计划支出',
+					data: [17, 6, 3, 8, 3, 6]
+				}, {
+					type: 'column',
+					name: '计划收入',
+					data: [10, 15, 20, 9, 20, 15]
+				}, {
+					type: 'column',
+					name: '实际支出',
+					data: [5, 4, 8, 7, 8, 4]
+				}, {
+					type: 'column',
+					name: '实际收入',
+					data: [12, 8, 18, 11, 17, 13]
+				}, {
+					type: 'spline',
+					name: '计划利润',
+					data: [-7, 9, 17, 1, 17,9],
+					marker: {
+						lineWidth: 2,
+						lineColor: Highcharts.getOptions().colors[3],
+						fillColor: 'white'
+					}
+				}, {
+					type: 'spline',
+					name: '实际利润',
+					data: [7, 4, 10, 4, 9, 9],
+					marker: {
+						lineWidth: 2,
+						lineColor: Highcharts.getOptions().colors[3],
+						fillColor: 'white'
+					}
+				}, {
+					type: 'pie',
+					name: 'Total consumption',
+					data: [{
+						name: '计划支出',
+						y: 43,
+						x : 247,
+						color: Highcharts.getOptions().colors[0] // Jane's color
+					}, {
+						name: '计划收入',
+						y: 89,
+						x : 247,
+						color: Highcharts.getOptions().colors[1] // John's color
+					}, {
+						name: '实际支出',
+						y: 36,
+						x : 247,
+						color: Highcharts.getOptions().colors[2] // Joe's color
+					}, {
+						name: '实际收入',
+						y: 79,
+						x : 247,
+						color: Highcharts.getOptions().colors[3] // Joe's color
+					}],
+					center: [100 , 0],
+					size: 100,
+					showInLegend: false,
+					dataLabels: {
+						enabled: false
+					}
+				}]
+			});
+		});
+		</script>
+	</head>
+	<body>
+		<div id="container" style="margin: 0 auto"></div>
+	</body>
+</html>

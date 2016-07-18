@@ -1,0 +1,130 @@
+<!DOCTYPE HTML>
+<html>
+		<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>员工工作情况</title>
+		<link id="sss" rel="stylesheet" type="text/css" href="../../themes/gray/easyui.css">
+		<link rel="stylesheet" type="text/css" href="../../themes/icon.css">
+		<link rel="stylesheet" type="text/css" href="../../demo/demo.css">
+		<script type="text/javascript" src="../../js/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="../../js/jquery.easyui.min.js"></script>
+		<script type="text/javascript">
+ function cssSet(d){
+	if(d==1){
+		$('#sss').attr('href','../../themes/gray/easyui.css');			
+	}
+	if(d==2){
+		$('#sss').attr('href','../../themes/default/easyui.css');
+	}
+	
+	if(d==3){
+		$('#sss').attr('href','../../themes/black/easyui.css');
+	}
+	if(d==4){
+		$('#sss').attr('href','../../themes/metro/easyui.css');
+	}
+ }
+</script>
+		<script type="text/javascript">
+$(function () {
+        $('#container').highcharts({
+			 chart: {
+             
+				backgroundColor: null,
+				events:{
+				  	click:function(){
+						window.open( '../../38/workQk1.html','','toolbar=no,  menubar=no, location=no, directories=no, status=no, scrollbars=yes, resizable=yes, width=900, height=500, left=200, top=100');
+				//alert('dddddd');  //事件
+					}
+				}
+             
+            },
+            title: {
+                text: '员工工作情况',
+                x: 20 //center
+            },
+           /* subtitle: {
+                text: 'Source: WorldClimate.com',
+                x: -20
+            },*/
+            xAxis: {
+                categories: ['140501', '140502', '140503', '140504', '140505', '140506',
+                    '140507', '140508', '140509', '140510', '140511', '140512']
+            },
+			plotOptions: {
+                line: {                    				
+					dataLabels: {
+                        enabled: true						
+                    },
+					enableMouseTraching: false
+				}
+			 },
+            yAxis: {
+                title: {
+                    text: '人数/个'
+                },
+                plotLines: [{
+                    value: 0,
+                    width: 1,
+                    color: '#808080'
+                }]
+            },
+			
+            tooltip: {
+                valueSuffix: '/人'
+            },
+			
+			credits:{    //去掉网址
+			     enabled:false
+			},  
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'middle',
+                borderWidth: 0
+            },
+			
+            series: [{
+                name: '少于8小时',
+                data: [-7, -6, -30, -14, -18, -10, -19, -40, -20, -18, -13, -4]
+            }, {
+                name: '8-12小时',
+                data: [155, 200, 210, 160, 190, 180, 200, 189, 230, 199, 198, 210]
+            }, {
+                name: '12-16小时',
+                data: [60,40, 55, 84, 123, 100, 86, 79, 143, 90, 70, 10]
+            }, {
+                name: '超过16小时',
+                data: [2, 4, 8, 5, 12, 5, 9, 12, 10, 9, 15, 8]
+            }]
+        });
+    });
+    
+
+		</script>
+		</head>
+		<body>
+<script src="../../js/highcharts.js"></script>
+<div class="panel-search" style="padding:10px;"> 方式:
+          <select class="easyui-combobox" panelHeight="auto" style="width:100px">
+    <option value="java">月/天</option>
+    <option value="c">月/天</option>
+    <option value="basic">月/天</option>
+    <option value="perl">月/天</option>
+  </select>
+          </select>
+          &nbsp;&nbsp;时间范围:
+          <input class="easyui-datebox" >
+          到
+          <input class="easyui-datebox" >
+          &nbsp;&nbsp;部门:
+          <select class="easyui-combobox" panelHeight="auto" style="width:100px">
+    <option value="java">对地勘测</option>
+    <option value="c"></option>
+    <option value="basic"></option>
+    <option value="perl"></option>
+  </select>
+          <a href="#" class="easyui-linkbutton" iconCls="icon-search">统计</a> </div>
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+</body>
+</html>

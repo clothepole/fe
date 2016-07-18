@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<html>
+		<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>区域综合统计图</title>
+		<link rel="stylesheet" type="text/css" href="../../demo/demo.css">
+		<script type="text/javascript" src="../../js/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript">
+
+$(function () {
+    $('#container').highcharts({
+        title: {
+            text: '区域综合统计图'
+        },
+        xAxis: {
+            categories: ['A项目', 'B项目', 'C项目', 'D项目']
+        },
+        labels: {
+            items: [{
+                html: '年度综合收费分布图',
+                style: {
+                    left: '50px',
+                    top: '18px',
+                    color: (Highcharts.theme && Highcharts.theme.textColor) || 'black'
+                }
+            }]
+        },
+        series: [{
+            type: 'column',
+            name: '已收金额（万元）',
+            data: [1, 1, 4, 6]
+        }, {
+            type: 'column',
+            name: '清欠金额（万元）',
+            data: [2, 3, 5, 4]
+        }, {
+            type: 'column',
+            name: '实收金额（万元）',
+            data: [2, 2, 5, 4]
+        }, {
+            type: 'column',
+            name: '应收金额（万元）',
+            data: [3, 1, 3, 7]
+        }/*, {
+            type: 'spline',
+            name: '东北区',
+            data: [3, 2.67, 3, 6.33, 3.33],
+            marker: {
+                lineWidth: 2,
+                lineColor: Highcharts.getOptions().colors[3],
+                fillColor: 'white'
+            }
+        }*/, {
+            type: 'pie',
+            name: 'Total consumption',
+            data: [{
+                name: '已收金额',
+                y: 18,
+                color: Highcharts.getOptions().colors[0] // Jane's color
+            }, {
+                name: '清欠金额',
+                y: 23,
+                color: Highcharts.getOptions().colors[1] // John's color
+            }, {
+                name: '应收金额',
+                y: 50,
+                color: Highcharts.getOptions().colors[2] // Joe's color
+            }],
+            center: [100, 80],
+            size: 100,
+            showInLegend: false,
+            dataLabels: {
+                enabled: false
+            }
+        }]
+    });
+});
+	</script>
+		</head>
+		<body>
+<script src="../../js/highcharts.js"></script>
+<div class="panel-search" style="padding:10px;"> 统计条件:
+    <select class="easyui-combobox" panelHeight="auto" style="width:100px">
+    <option value="java">2015</option>
+    <option value="c">2014</option>
+    <option value="basic">2013</option>
+    <option value="perl">2012</option>
+  </select>
+   <!--         &nbsp;&nbsp;部门:
+  <select class="easyui-combobox" panelHeight="auto" style="width:100px">
+    <option value="java">对地勘测</option>
+    <option value="c"></option>
+    <option value="basic"></option>
+    <option value="perl"></option>
+  </select>-->
+          <a href="#" class="easyui-linkbutton" iconCls="icon-search">统计</a> </div>
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+</body>
+</html>

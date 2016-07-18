@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html>
+		<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>文档输入输出</title>
+		<link id="sss" rel="stylesheet" type="text/css" href="../../themes/gray/easyui.css">
+		<link rel="stylesheet" type="text/css" href="../../themes/icon.css">
+		<link rel="stylesheet" type="text/css" href="../../demo/demo.css">
+		<script type="text/javascript" src="../../js/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="../../js/jquery.easyui.min.js"></script>
+		<script type="text/javascript">
+ function cssSet(d){
+	if(d==1){
+		$('#sss').attr('href','../../themes/gray/easyui.css');			
+	}
+	if(d==2){
+		$('#sss').attr('href','../../themes/default/easyui.css');
+	}
+	
+	if(d==3){
+		$('#sss').attr('href','../../themes/black/easyui.css');
+	}
+	if(d==4){
+		$('#sss').attr('href','../../themes/metro/easyui.css');
+	}
+ }
+</script>
+		<script type="text/javascript">
+$(function () {
+    $('#container').highcharts({
+        data: {
+            table: document.getElementById('datatable')
+        },
+        chart: {
+            type: 'column',
+			backgroundColor: null,
+				events:{
+				  	click:function(){
+						window.open( 'pmNodeFinish.htm','','toolbar=no,  menubar=no, location=no, directories=no, status=no, scrollbars=yes, resizable=yes, width=900, height=500, left=200, top=100');
+				//alert('dddddd');  //事件
+					}
+				}
+             
+        },
+        title: {
+            text: '文档输入输出'
+        },
+        yAxis: {
+            allowDecimals: false,
+            title: {
+                text: '系列2'
+            }
+        },
+			 plotOptions: {
+                column: {
+                    dataLabels: {
+                        enabled: true
+                    }
+                }
+			 },
+		credits:{    //去掉网址
+			     enabled:false
+			}/*,
+        tooltip: {
+            formatter: function() {
+                return '<b>'+ this.series.name +'</b><br/>'+
+                    this.y +' '+ this.x.toLowerCase();
+            }
+        }*/
+    });
+});
+		</script>
+		</head>
+		<body>
+<script src="../../js/highcharts.js"></script> 
+<script src="../../js/modules/data.js"></script>
+<div id="container" style="min-width: 310px; height:250px; margin: 0 auto"></div>
+<table id="datatable"  style="display: none">
+          <thead>
+    <tr>
+              <th></th>
+              <th>输入</th>
+              <th>输出</th>
+            </tr>
+  </thead>
+          <tbody>
+    <tr>
+              <th>02/05</th>
+              <td>5</td>
+              <td>10</td>
+            </tr>
+    
+  </tbody>
+        </table>
+</body>
+</html>

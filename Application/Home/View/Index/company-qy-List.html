@@ -1,0 +1,175 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>公司供热情况分布表</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, 
+                                     initial-scale=1.0, 
+                                     maximum-scale=1.0, 
+                                     user-scalable=yes">
+
+<!-- 引入 Bootstrap -->
+<link href="../files/commcss/custom.css" rel="stylesheet">
+<link href="../files/bootstrap-table-1.7.0/bootstrap-table.min.css" rel="stylesheet">
+<link href="../files/commcss/css/font-awesome.min.css" rel="stylesheet">
+<style>
+.coolscrollbar {
+	scrollbar-arrow-color: yellow;
+	scrollbar-base-color: lightsalmon;
+}
+</style>
+<!-- HTML5 Shim 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
+<!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
+<!--[if lt IE 9]>
+      	 <link href="files/icons/css/font-awesome-ie7.min.css" rel="stylesheet">
+         <script src="files/bootstrap-3.3.4/html5shiv.js"></script>
+         <script src="files/bootstrap-3.3.4/respond.min.js"></script>
+      <![endif]-->
+
+<!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
+<script  src="../files/commjs/jquery.js"></script>
+<!-- 包括所有已编译的插件 -->
+<script  src="../files/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+<script src="../files/bootstrap-table/bootstrap-table.min.js"></script>
+<script src="../files/bootstrap-table/extensions/filter/bootstrap-table-filter.min.js"></script>
+<script src="../files/bootstrap-table/extensions/export/bootstrap-table-export.js"></script>
+<script language="JavaScript" type="text/javascript" src="../files/commjs/topLink.js"></script>
+<style>
+body {
+	background-color: #fff;	
+	margin-top: 5px;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: auto;
+	padding: 20px;
+}
+</style>
+</head>
+<body>
+<!--<div id="toolbar">
+            <div class="form-inline" role="form">
+                <div class="form-group">
+                    <span>Offset: </span>
+                    <input name="offset" class="form-control w70" type="number" value="0">
+                </div>
+                <div class="form-group">
+                    <span>Limit: </span>
+                    <input name="limit" class="form-control w70" type="number" value="5">
+                </div>
+                <div class="form-group">
+                    <input name="search" class="form-control" type="text" placeholder="Search">
+                </div>
+                <button id="ok" type="submit" class="btn btn-default">OK</button>
+            </div>
+        </div>
+           -->
+<div class="row">
+      <div class="right-padding col-md-2 ui-sortable">         
+          <div class="input-group">
+              <span class="input-group-addon" id="basic-addon1">供暖季选择：</span>              
+              <select name="jumpMenu" id="jumpMenu" class="form-control"  style="width:100px; height:40px;" >
+                 <option>2015</option>
+            <option>2014</option>
+            <option>2013</option>
+          </select>
+            </div>
+              </div>
+            <div class="right-padding col-md-2 ui-sortable">
+              <div class="input-group">
+              <span class="input-group-addon" id="basic-addon1">统计方式选择：</span>              
+              <select name="jumpMenu" id="jumpMenu" class="form-control"  style="width:100px; height:40px;" >
+            <option>金额</option>
+            <option>面积</option>
+            <option>住户</option>
+          </select>
+            </div>
+       </div> 
+      <div class="right-padding col-md-2 ui-sortable" >
+     <div class="input-group">
+              <span class="input-group-addon" id="basic-addon1">总金额 / 总面积 / 总户数：</span>              
+               <input disabled type="text" class="form-control" placeholder="856.0000" aria-describedby="basic-addon1"  style="width:150px; height:40px;">
+            </div>
+      </div>
+       <div class=" col-md-6 ui-sortable" >    
+      </div>
+ </div>
+  <table  class="table-striped"   data-toggle="table" data-height="700"  data-url="data-basic.json"  data-show-columns="true"  data-search"true" data-show-refresh="true" data-show-toggle="true" data-show-export="true" data-pagination="true" width="100%">
+    <thead  class="thead" >
+      <tr>
+        <th data-field="xmmc" data-align="center"  data-sortable="true">项目名称</th>
+        <th data-field="ys" >应收金额(万元) / 面积(平方米) / 户数(户)</th>
+        <th data-field="ss" data-align="center"  data-sortable="true">实收金额(万元) / 面积(平方米) / 户数(户)</th>
+        <th data-field="sfl" data-align="center" >收费率（%）</th>
+    
+        <th data-field="jq" data-align="center"  data-sortable="true" >已收总金额(万元) / 总面积(平方米) / 总户数(户)</th>
+        <th data-field="jq" data-align="center"  data-sortable="true" >旧欠总金额(万元) / 总面积(平方米) / 总户数(户)</th>
+        <th data-field="pm" data-sortable="true">排名</th>       
+      </tr>
+    </thead>
+  </table>
+  <!-- 模态框（Modal） -->
+<div class="modal fade" id="myModalqy" tabindex="-1" role="dialog" 
+   aria-labelledby="myModalLabel" aria-hidden="true">
+   <div class="modal-dialog"  >
+      <div class="modal-content"   style="width:852px;">
+         <div class="modal-header" style="width:850px; background-image:url(../images/title_di.jpg); height:43px; padding-top:4px;margin:0;">
+            <button type="button" class="close" 
+               data-dismiss="modal" aria-hidden="true">
+                  &times;
+            </button>
+            <h4 class="modal-title" id="myModalLabel" >
+              A目部供热情况信息               
+            </h4>
+         </div>
+         <div style="padding:0; width:850px;height:280px;">
+            <iframe src="companyInfo.html" style="width:100%;height:100%;border:0; margin-top:0;"></iframe>
+         </div>
+        <div class="modal-footer" style="width:850px; height:43px;  background-image:url(../images/title2_di.jpg);">
+            <button type="button"  class="btn btn-large btn-primary"  onClick="window.close();" 
+               data-dismiss="modal">关闭
+            </button>
+            <!-- <button type="button" class="btn btn-large btn-primary btn-warning" href="#" onClick="window.close();" > 
+               取消
+            </button>-->
+         </div>
+      </div><!-- /.modal-content -->
+</div><!-- /.modal -->
+</div>
+<!--
+<script type="text/javascript">     //以下JS是左侧菜单切换显示/隐藏可折叠
+   $(function () { $('#collapseFour').collapse({
+      toggle: false       //激活内容为可折叠元素。接受一个可选的 options 对象
+   })});
+   $(function () { $('#collapseTwo').collapse('show')});   //显示可折叠元素。
+   $(function () { $('#collapseThree').collapse('toggle')});  //切换显示/隐藏可折叠
+   $(function () { $('#collapseOne').collapse('hide')});    //隐藏可折叠元素
+</script>  
+--> 
+<script>
+    function nameFormatter(value, row) {
+        var icon = row.id % 2 === 0 ? 'glyphicon-star' : 'glyphicon-star-empty'
+
+        return '<i class="glyphicon ' + icon + '"></i> ' + value;
+    }
+
+    function priceFormatter(value) {
+        // 16777215 == ffffff in decimal
+        var color = '#'+Math.floor(Math.random() * 6777215).toString(16);
+        return '<div  style="color: ' + color + '">' +
+                '<i class="icon-tag "></i>' +
+                value.substring(1) +
+                '</div>';
+    }
+</script>
+<script type="text/javascript">
+    function FullInfo(){ 
+   window.showModalDialog("companyInfo.html","","dialogWidth:1000px; dialogHeight:350px;dialogLeft:400px; dialogTop:300px;  scroll:no;status:no") 
+   } 
+   
+   $(function () { 
+      $('#collapseFour').on('show.bs.collapse', function () {   // 执行一些动作...  在调用 show 方法后触发该事件。还有shown/hide/hidden.bs.collapse 等方法。
+         alert('嘿，当您展开时会提示本警告');})
+   });
+</script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>项目节点进度监控图</title>
+	<script type="text/javascript" src="../../js/jquery-1.7.2.min.js"></script>
+	<script src="../../js/highcharts.js"></script> 
+	<script src="../../js/modules/data.js"></script>
+	<script type="text/javascript">
+	 function cssSet(d){
+		if(d==1){
+			$('#sss').attr('href','../../themes/gray/easyui.css');			
+		}
+		if(d==2){
+			$('#sss').attr('href','../../themes/default/easyui.css');
+		}
+		
+		if(d==3){
+			$('#sss').attr('href','../../themes/black/easyui.css');
+		}
+		if(d==4){
+			$('#sss').attr('href','../../themes/metro/easyui.css');
+		}
+	 }
+	</script>
+	<script type="text/javascript">
+	$(function () {
+		var str = window.location.href.split("?")[1];
+	    $('#container').highcharts({
+	        data: {
+	            table: document.getElementById('datatable')
+	        },
+	        chart: {
+	            type: 'column',
+				backgroundColor: null,
+				events:{
+				  	click:function(){
+						window.open( 'pmNodeFinish.htm','','toolbar=no,  menubar=no, location=no, directories=no, status=no, scrollbars=yes, resizable=yes, width=900, height=500, left=200, top=100');
+					}
+				},
+	        	height : parseInt(str,10)-16  
+	        },
+	        title: {
+	            text: '项目节点进度监控图'
+	        },
+	        yAxis: {
+	            allowDecimals: false,
+	            title: {
+	                text: '完成率（%）'
+	            },
+	            lineWidth : 1
+	        },
+	        xAxis: {
+	            title: {
+	                text: '日期（年月日）'
+	            }
+	        },
+			plotOptions: {
+	            column: {
+	                dataLabels: {
+	                    enabled: true
+	                }
+	            }
+			},
+			credits:{
+				enabled:false
+			}
+	    });
+	});
+	</script>
+	</head>
+<body>
+<div id="container" style="margin: 0 auto"></div>
+<table id="datatable"  style="display: none">
+          <thead>
+    <tr>
+              <th></th>
+              <th>实际</th>
+              <th>计划</th>
+            </tr>
+  </thead>
+          <tbody>
+    <tr>
+              <th>02/05</th>
+              <td>5</td>
+              <td>10</td>
+            </tr>
+    <tr>
+              <th>02/12</th>
+              <td>15</td>
+              <td>20</td>
+            </tr>
+    <tr>
+              <th>02/19</th>
+              <td>20</td>
+              <td>25</td>
+            </tr>
+    <tr>
+              <th>02/26</th>
+              <td>25</td>
+              <td>30</td>
+            </tr>
+    <tr>
+              <th>03/02</th>
+              <td>45</td>
+              <td>60</td>
+            </tr>
+  </tbody>
+        </table>
+</body>
+</html>

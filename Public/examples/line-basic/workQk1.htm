@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>员工工作情况</title>
+		<script type="text/javascript" src="../../js/jquery-1.7.2.min.js"></script>
+		<script src="../../js/highcharts.js"></script>
+		<script type="text/javascript">
+		 function cssSet(d){
+			if(d==1){
+				$('#sss').attr('href','../../themes/gray/easyui.css');			
+			}
+			if(d==2){
+				$('#sss').attr('href','../../themes/default/easyui.css');
+			}
+			
+			if(d==3){
+				$('#sss').attr('href','../../themes/black/easyui.css');
+			}
+			if(d==4){
+				$('#sss').attr('href','../../themes/metro/easyui.css');
+			}
+		 }
+		</script>
+		<script type="text/javascript">
+		var str = window.location.href.split("?")[1];
+		$(function () {
+	        $('#container').highcharts({
+				 chart: {             
+					backgroundColor: null,
+					events:{
+					  	click:function(){
+							window.open( 'workQk.htm','','toolbar=no,  menubar=no, location=no, directories=no, status=no, scrollbars=yes, resizable=yes, width=900, height=500, left=200, top=100');
+						}
+					},
+		        	height : parseInt(str,10)-16
+	            },
+	            title: {
+	                text: '员工工作情况',
+	                x: 20 //center
+	            },
+	            xAxis: {
+	                categories: ['20130401', '20130402', '20130403', '20130404', 
+	         	               '20130405', '20130406','20130407','20130408',  
+	         	               '20130409','20130410', '20130411', '20130412'],
+	         		title : {
+	         			text : "日期（年月日）"
+	            	},
+	            	labels : {
+		            	rotation : 79
+	            	}
+	            },
+	            yAxis: {
+	                title: {
+	                    text: '人数/个'
+	                },
+	                plotLines: [{
+	                    value: 0,
+	                    width: 1,
+	                    color: '#808080'
+	                }],
+	                min : 0,
+	                lineWidth : 1
+	            },				
+	            tooltip: {
+	                valueSuffix: '人'
+	            },				
+				credits:{    //去掉网址
+				     enabled:false
+				},  
+	            legend: {
+	                layout: 'vertical',
+	                align: 'right',
+	                verticalAlign: 'middle',
+	                borderWidth: 0
+	            },			
+	            series: [{
+	                name: '少于8小时',
+	                data: [7, 6, 30, 14, 18, 10, 19, 40, 20, 18, 13, 4]
+	            }, {
+	                name: '8-12小时',
+	                data: [155, 200, 210, 160, 190, 180, 200, 189, 230, 199, 198, 210]
+	            }, {
+	                name: '12-16小时',
+	                data: [60,40, 55, 84, 123, 100, 86, 79, 143, 90, 70, 10]
+	            }, {
+	                name: '超过16小时',
+	                data: [2, 4, 8, 5, 12, 5, 9, 12, 10, 9, 15, 8]
+	            }]
+	        });
+	    });
+		</script>
+	</head>
+	<body>
+		<div id="container" style="margin: 0 auto"></div>
+	</body>
+</html>

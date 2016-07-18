@@ -1,0 +1,8 @@
+﻿[
+{"itemid":"<a href='#' data-toggle='modal'    data-target='#myModal1'>第一单元</a>","ys":"怀柔区xxxxxxxx","ss":"300","jq":"20","sfl":"80","jq":"20","pm":"4","sfd":"A收费点"},
+{"itemid":"<a href='#' '>第二单元</a>","ys":"怀柔区xxxxxxxx","ss":"300","jq":"10","sfl":"70","jq":"20","pm":"3","sfd":"B收费点"},
+{"itemid":"<a href='#' '>第三单元</a>","ys":"通州区bbbbbbbbb","":"200","jq":"15","sfl":"80","jq":"20","pm":"2","sfd":"C收费点"},
+{"itemid":"<a href='#' '>第四单元</a>","ys":"通州区ccccccccccc","ss":"300","jq":"20","sfl":"40","jq":"20","pm":"1","sfd":"D收费点"}
+
+
+]

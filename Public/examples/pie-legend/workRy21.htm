@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<html>
+		<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>已收/未收本区域收费情况分布图</title>
+		<link rel="stylesheet" type="text/css" href="../../demo/demo.css">
+		<script type="text/javascript" src="../../js/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript">
+$(function () {
+    var chart;
+    
+    $(document).ready(function () {
+    	
+    	// Build the chart
+        $('#container').highcharts({
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+				backgroundColor: null,
+                plotShadow: false
+             
+            },
+			colors:[ '#2f7ed8', '#0d233a','#a60000'],
+            title: {
+                text: '已收/未收本区域收费情况分布图, 2015年'
+            },
+            tooltip: {
+        	    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: true,
+						formatter: function(){
+							var temp = ""+this.point.percentage.toFixed(0,4);
+						    return '<b>' + this.point.name + '</b>:' +  temp +"%";
+						},			
+                    },
+                    showInLegend: true,	
+				events:{
+				  	click:function(){
+						window.open( '../../38/workRy.html','','toolbar=no,  menubar=no, location=no, directories=no, status=no, scrollbars=yes, resizable=yes, width=900, height=500, left=200, top=100');
+				//alert('dddddd');  //事件
+					}
+				}
+                }
+            },
+			credits:{    //去掉网址
+			     enabled:false
+			},
+            series: [{
+                type: 'pie',
+                name: 'Browser share',
+                data: [
+                    ['东北区',   37.0],
+                    ['东南区',       20.8],
+					
+					 {
+                        name: '西南区',
+                        y: 18.8,
+                        sliced: true,
+                        selected: true
+                    },
+                   {
+                        name: '西北区',
+                        y: 25.8,
+                        sliced: true,
+                        selected: true
+                    }
+                   /* ['非科研类',    30.5],
+                    ['非科研类',     6.2],
+                    ['事务类',   6.7]*/
+                ]
+            }]
+        });
+    });
+    
+});
+		</script>
+		</head>
+		<body>
+<script src="../../js/highcharts.js"></script>
+<div class="panel-search" style="padding:10px;"> 统计条件:
+    <select class="easyui-combobox" panelHeight="auto" style="width:100px">
+    <option value="java">2015</option>
+    <option value="c">2014</option>
+    <option value="basic">2013</option>
+    <option value="perl">2012</option>
+  </select>
+   <!--         &nbsp;&nbsp;部门:
+  <select class="easyui-combobox" panelHeight="auto" style="width:100px">
+    <option value="java">对地勘测</option>
+    <option value="c"></option>
+    <option value="basic"></option>
+    <option value="perl"></option>
+  </select>-->
+          <a href="#" class="easyui-linkbutton" iconCls="icon-search">统计</a> </div>
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+</body>
+</html>

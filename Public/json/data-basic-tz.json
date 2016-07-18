@@ -1,0 +1,8 @@
+﻿[
+{"itemid":"<a href='#' data-toggle='modal'  data-target='#myModal2'>101</a>","fjh":"101","hz":"张三","sfz":"0100011567637","tel":"13573102778","ys":"90","ss":"80","mj":"40","dj":"30","yhdj":"特级","jhzt":"已缴费","bgxx":"停暖"},
+{"itemid":"<a href='#' data-toggle='modal'  data-target='#myModal2'>102</a>","fjh":"101","hz":"李四","sfz":"0100011452637","tel":"182693102778","ys":"90","ss":"80","mj":"40","dj":"30","yhdj":"一级","jhzt":"未缴费","bgxx":"金额变动"},
+{"itemid":"<a href='#' data-toggle='modal'  data-target='#myModal2'>103</a>","fjh":"101","hz":"王五","sfz":"01006582637","tel":"18693102778","ys":"60","ss":"80","mj":"40","dj":"30","yhdj":"二级","jhzt":"未缴清","bgxx":"面积变更"},
+{"itemid":"<a href='#' data-toggle='modal'  data-target='#myModal2'>104</a>","fjh":"101","hz":"刘二","sfz":"0100655656637","tel":"15693102778","ys":"70","ss":"80","mj":"40","dj":"30","yhdj":"三级","jhzt":"已缴费","bgxx":"基础信息变更"},
+{"itemid":"<a href='#' data-toggle='modal'  data-target='#myModal2'>105</a>","fjh":"106","hz":"张国中","sfz":"00124016552637","tel":"18993102778","ys":"80","ss":"80","mj":"40","dj":"30","yhdj":"特级","jhzt":"未缴费","bgxx":"停暖"}
+
+]

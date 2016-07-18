@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>项目工时提交监控</title>
+		<script type="text/javascript" src="../../js/jquery-1.7.2.min.js"></script>
+		<script src="../../js/highcharts.js"></script>
+		<script type="text/javascript">
+		 function cssSet(d){
+			if(d==1){
+				$('#sss').attr('href','../../themes/gray/easyui.css');			
+			}
+			if(d==2){
+				$('#sss').attr('href','../../themes/default/easyui.css');
+			}
+			
+			if(d==3){
+				$('#sss').attr('href','../../themes/black/easyui.css');
+			}
+			if(d==4){
+				$('#sss').attr('href','../../themes/metro/easyui.css');
+			}
+		 }
+		</script>
+		<script type="text/javascript">
+		$(function () {
+		    var chart;
+		    var str = window.location.href.split("?")[1];
+		    $(document).ready(function () {
+		    	
+		    	// Build the chart
+		        $('#container').highcharts({
+		            chart: {
+		                plotBackgroundColor: null,
+		                plotBorderWidth: null,
+						backgroundColor: null,
+		                plotShadow: true,
+			        	height : parseInt(str,10)-16
+		            },
+					colors:[ '#c42525','#2f7ed8'],
+		            title: {
+		                text: '项目工时提交监控'
+		            },
+		            tooltip: {
+		        	    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+		            },
+		            plotOptions: {
+		                pie: {
+		                    allowPointSelect: true,
+		                    cursor: 'pointer',
+		                    dataLabels: {
+		                        enabled: true,
+								formatter: function(){
+								    return this.point.percentage.toFixed(0,4) +"%";
+								},
+								distance : -30			
+		                    },
+		                    showInLegend: true,	
+						events:{
+						  	click:function(){
+								window.open( 'workTime.htm','','toolbar=no,  menubar=no, location=no, directories=no, status=no, scrollbars=yes, resizable=yes, width=900, height=500, left=200, top=100');
+							}
+						}
+		                }
+		            },
+					credits:{    //去掉网址
+					     enabled:false
+					},
+		            series: [{
+		                type: 'pie',
+		                name: '工时比率：',
+		                data: [
+							['未提交数',     20],
+		                    ['已提交数',   80]                    
+		                ]
+		            }]
+		        });
+		    });
+		    
+		});
+		</script>
+	</head>
+	<body>
+	<div id="container" style="margin: 0 auto"></div>
+	</body>
+</html>

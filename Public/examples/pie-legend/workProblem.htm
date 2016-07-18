@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>部门项目问题分布</title>
+
+		<link id="sss" rel="stylesheet" type="text/css" href="../../themes/gray/easyui.css">
+		<link rel="stylesheet" type="text/css" href="../../themes/icon.css">
+		<link rel="stylesheet" type="text/css" href="../../demo/demo.css">
+		<script type="text/javascript" src="../../js/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="../../js/jquery.easyui.min.js"></script>
+		<script type="text/javascript">
+ function cssSet(d){
+	if(d==1){
+		$('#sss').attr('href','../../themes/gray/easyui.css');			
+	}
+	if(d==2){
+		$('#sss').attr('href','../../themes/default/easyui.css');
+	}
+	
+	if(d==3){
+		$('#sss').attr('href','../../themes/black/easyui.css');
+	}
+	if(d==4){
+		$('#sss').attr('href','../../themes/metro/easyui.css');
+	}
+ }
+</script>
+		<script type="text/javascript">
+$(function () {
+    var chart;
+    
+    $(document).ready(function () {
+    	
+    	// Build the chart
+        $('#container').highcharts({
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+				backgroundColor: null,
+                plotShadow: true
+            },
+            title: {
+                text: '部门项目问题分布'
+            },
+            tooltip: {
+        	    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: true,
+						formatter: function(){
+							var temp = ""+this.point.percentage.toFixed(0,4);
+						    return '<b>' + this.point.name + '</b>:' +  temp +"%";
+						},				
+                    },
+                    showInLegend: true,	
+				events:{
+				  	click:function(){
+						window.open( '../../38/workProblem.html','','toolbar=no,  menubar=no, location=no, directories=no, status=no, scrollbars=yes, resizable=yes, width=900, height=500, left=200, top=100');
+				//alert('dddddd');  //事件
+					}
+				}
+               
+                }
+            },
+			credits:{    //去掉网址
+			     enabled:false
+			},
+            series: [{
+                type: 'pie',
+                name: 'Browser share',
+                data: [
+                    ['已解决',   48.0],
+                    ['未解决',       26.8]
+                  /* {
+                        name: '',
+                        y: 12.8,
+                        sliced: true,
+                        selected: true
+                    }
+                    ['非科研类',    30.5],
+                    ['非科研类',     6.2],
+                    ['事务类',   6.7]*/
+                ]
+            }]
+        });
+    });
+    
+});
+		</script>
+	</head>
+	<body>
+<script src="../../js/highcharts.js"></script>
+<div class="panel-search" style="padding:10px;">  <select class="easyui-combobox" panelHeight="auto" style="width:100px">
+    <option value="java">项1目</option>
+    <option value="c">项目2</option>
+    <option value="basic">项目3</option>
+    <option value="perl">项目4</option>
+  </select>
+         &nbsp;&nbsp;时间范围:
+      <input class="easyui-datebox" >
+      到
+      <input class="easyui-datebox" >
+      <a href="#" class="easyui-linkbutton" iconCls="icon-search">统计</a> </div>
+
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+	</body>
+</html>

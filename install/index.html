@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title> 系统安装程序</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=7" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+    <script type="text/javascript">
+        function $(id) {
+            return document.getElementById(id);
+        }
+
+        function showmessage(message) {
+            $("notice").value += message + "\r\n";
+        }
+    </script>
+
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1> 系统安装程序</h1>
+            <span>V2.0</span>
+            <div class="dress dress2"><h3>安装数据库</h3><p>正在执行数据库安装</p></div>
+        </div>
+        <div class="main">
+            <form method="post" action="index.php">
+                <input type="hidden" name="step" value="2" />
+                <div class="desc"><b>数据库信息</b></div><table class="tb2">
+                    <tr>
+                        <th class="tbopt">&nbsp;数据库服务器:</th>
+                        <td><input type="text" name="dbinfo[dbhost]" value="localhost" size="35" class="txt" /></td>
+                        <td>&nbsp;</td>
+                    </tr>
+
+                    <tr>
+                        <th class="tbopt">&nbsp;数据库名:</th>
+                        <td>
+                            <input type="text" name="dbinfo[dbname]" placeholder="输入数据库名称" value="fe" size="35" class="txt" /> &nbsp;&nbsp;
+                            <input type="checkbox" checked name="dbinfo[mk_newdb]" value="1" />新建库名
+                        </td>
+                        <td>&nbsp;</td>
+                    </tr>
+
+                    <tr>
+                        <th class="tbopt">&nbsp;数据库用户名:</th>
+                        <td><input type="text" name="dbinfo[dbuser]" value="root" size="35" class="txt" /></td>
+                        <td>&nbsp;</td>
+                    </tr>
+
+                    <tr>
+                        <th class="tbopt">&nbsp;数据库密码:</th>
+                        <td><input type="password" name="dbinfo[dbpw]" value="moganfreeman" size="35" class="txt" /></td>
+                        <td>&nbsp;</td>
+                    </tr>
+
+                    <tr>
+                        <th class="tbopt">&nbsp;数据表前缀:</th>
+                        <td><input type="text" name="dbinfo[tablepre]" value="fe_" size="35" class="txt" /></td>
+                        <td>&nbsp;</td>
+                    </tr>
+
+                    <tr>
+                        <th class="tbopt">&nbsp;数据库端口:</th>
+                        <td><input type="text" name="dbinfo[dbport]" value="3306" size="35" class="txt" /></td>
+                        <td>&nbsp;</td>
+                    </tr>
+
+                </table>
+
+
+                <table class="tb2">
+                    <tr>
+                        <th class="tbopt">&nbsp;</th>
+                        <td>
+                            <input type="submit" name="submitname" value="下一步" class="btn" />
+                        </td>
+                        <td>&nbsp;</td>
+                    </tr>
+
+                </table>
+            </form>
+
+        </div>
+    </div>
+</body>
+</html>

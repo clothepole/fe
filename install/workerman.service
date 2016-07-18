@@ -1,0 +1,14 @@
+[Unit]
+Description=workerman
+After=network.target
+
+[Service]
+Type=forking
+ExecStart=/usr/bin/php /home/wwwroot/default/gui/workerman-chat-master/start.php start -d
+ExecReload=/usr/bin/php /home/wwwroot/default/gui/workerman-chat-master/start.php restart
+ExecStop=/usr/bin/php /home/wwwroot/default/gui/workerman-chat-master/start.php stop
+PrivateTmp=true
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

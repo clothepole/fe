@@ -1,0 +1,388 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>项目运行情况</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, 
+                                     initial-scale=1.0, 
+                                     maximum-scale=1.0, 
+                                     user-scalable=yes">
+
+<!-- 引入 Bootstrap -->
+<link href="../files/commcss/custom.css" rel="stylesheet">
+<link href="../files/bootstrap-table-1.7.0/bootstrap-table.min.css" rel="stylesheet">
+<link href="../files/commcss/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="../bootstrap-table/bootstrap-table.css" />
+<style>
+.coolscrollbar {
+	scrollbar-arrow-color: yellow;
+	scrollbar-base-color: lightsalmon;
+}
+</style>
+<!-- HTML5 Shim 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
+<!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
+<!--[if lt IE 9]>
+      	 <link href="files/icons/css/font-awesome-ie7.min.css" rel="stylesheet">
+         <script src="files/bootstrap-3.3.4/html5shiv.js"></script>
+         <script src="files/bootstrap-3.3.4/respond.min.js"></script>
+      <![endif]-->
+
+<!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
+<script  src="../files/commjs/jquery.js"></script>
+<!-- 包括所有已编译的插件 -->
+<script  src="../files/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+<script src="../files/bootstrap-table/bootstrap-table.min.js"></script>
+<script src="../files/bootstrap-table/extensions/filter/bootstrap-table-filter.min.js"></script>
+<script src="../files/bootstrap-table/extensions/export/bootstrap-table-export.js"></script>
+<script language="JavaScript" type="text/javascript" src="../files/commjs/topLink.js"></script>
+ <script type="text/javascript" src="../bootstrap-table/bootstrap-table.js"></script>
+<style>
+body {
+	background-color: #fff;	
+	margin-top: 5px;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: auto;
+	padding: 20px;
+}
+</style>
+</head>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bootstrap Table Examples</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/index.css">
+    <script src="assets/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/index.js"></script>
+    <script src="ga.js"></script>
+</head>
+<body>
+
+
+<!-- Fixed navbar -->
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">Bootstrap Table Examples</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="https://github.com/wenzhixin/bootstrap-table" target="_blank">Bootstrap Table</a></li>
+                <li>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Options <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="options/boolean-options.html">Boolean options</a></li>
+                        <li><a href="options/from-html.html">From html</a></li>
+                        <li><a href="options/from-data.html">From data</a></li>
+                        <li><a href="options/modal-table.html">Modal Table</a></li>
+                        <li><a href="options/table-style.html">Table Style</a></li>
+                        <li><a href="options/no-bordered.html">No bordered</a></li>
+                        <li><a href="options/aligning-columns.html">Aligning Columns</a></li>
+                        <li><a href="options/basic-sort.html">Basic Sort</a></li>
+                        <li><a href="options/custom-sort.html">Custom Sort</a></li>
+                        <li><a href="options/format.html">Format</a></li>
+                        <li><a href="options/basic-columns.html">Basic Columns</a></li>
+                        <li><a href="options/large-columns.html">Large Columns</a></li>
+                        <li><a href="options/group-columns.html">Group Columns</a></li>
+                        <li><a href="options/disabled-checkbox.html">Disabled Checkbox</a></li>
+                        <li><a href="options/custom-toolbar.html">Custom Toolbar</a></li>
+                        <li><a href="options/detail-view.html">Detail View</a></li>
+                        <li><a href="options/sub-table.html">Sub Table</a></li>
+                        <li><a href="options/multiple-table.html">Multiple Table</a></li>
+                        <li><a href="options/client-side-pagination.html">Client Side Pagination</a></li>
+                        <li><a href="options/server-side-pagination.html">Server Side Pagination</a></li>
+                        <li><a href="options/pagination-custom-text.html">Pagination Custom Text</a></li>
+                        <li><a href="options/custom-ajax.html">Custom Ajax</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Methods <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="methods/getOptions.html">getOptions</a></li>
+                        <li><a href="methods/getSelections.html">getSelections</a></li>
+                        <li><a href="methods/getAllSelections.html">getAllSelections</a></li>
+                        <li><a href="methods/getData.html">getData</a></li>
+                        <li><a href="methods/getRowByUniqueId.html">getRowByUniqueId</a></li>
+                        <li><a href="methods/load.html">load</a></li>
+                        <li><a href="methods/append.html">append</a></li>
+                        <li><a href="methods/prepend.html">prepend</a></li>
+                        <li><a href="methods/remove.html">remove</a></li>
+                        <li><a href="methods/removeAll.html">removeAll</a></li>
+                        <li><a href="methods/removeByUniqueId.html">removeByUniqueId</a></li>
+                        <li><a href="methods/insertRow.html">insertRow</a></li>
+                        <li><a href="methods/updateRow.html">updateRow</a></li>
+                        <li><a href="methods/updateByUniqueId.html">updateByUniqueId</a></li>
+                        <li><a href="methods/showRow-hideRow.html">showRow/hideRow</a></li>
+                        <li><a href="methods/mergeCells.html">mergeCells</a></li>
+                        <li><a href="methods/checkAll-uncheckAll.html">checkAll/uncheckAll</a></li>
+                        <li><a href="methods/check-uncheck.html">check/uncheck</a></li>
+                        <li><a href="methods/checkBy-uncheckBy.html">checkBy/uncheckBy</a></li>
+                        <li><a href="methods/refresh.html">refresh</a></li>
+                        <li><a href="methods/resetView.html">resetView</a></li>
+                        <li><a href="methods/destroy.html">destroy</a></li>
+                        <li><a href="methods/showLoading-hideLoading.html">showLoading/hideLoading</a></li>
+                        <li><a href="methods/showColumn-hideCoulumn.html">showColumn/hideCoulumn</a></li>
+                        <li><a href="methods/scrollTo.html">scrollTo</a></li>
+                        <li><a href="methods/selectPage-prevPage-nextPage.html">selectPage/prevPage/nextPage</a></li>
+                        <li><a href="methods/togglePagination.html">togglePagination</a></li>
+                        <li><a href="methods/toggleView.html">toggleView</a></li>
+                        <li><a href="methods/refreshOptions.html">refreshOptions</a></li>
+                        <li><a href="methods/resetSearch.html">resetSearch</a></li>
+                        <li><a href="methods/expandRow-collapseRow.html">expandRow/collapseRow</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Extensions <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="extensions/editable.html">Editable</a></li>
+                        <li><a href="extensions/export.html">Export</a></li>
+                        <li><a href="extensions/flat-json.html">Flat Json</a></li>
+                        <li><a href="extensions/cookie.html">Cookie</a></li>
+                        <li><a href="extensions/resizable.html">Resizable</a></li>
+                        <li><a href="extensions/key-events.html">Key Events</a></li>
+                        <li><a href="extensions/mobile.html">Mobile</a></li>
+                        <li><a href="extensions/filter-control.html">Filter Control</a></li>
+                        <li><a href="extensions/toolbar.html">Advanced toolbar</a></li>
+                        <li><a href="extensions/reorder-columns.html">Reorder Columns</a></li>
+                        <li><a href="extensions/reorder-rows.html">Reorder Rows</a></li>
+                        <li><a href="extensions/multiple-sort.html">Multiple Sort</a></li>
+                        <li><a href="extensions/fixed-columns.html">Fixed Columns</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Integrate <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="integrate/angular">Angular</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Issues <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="issues/1167.html">
+1167. Check/Uncheck All in all page
+</a></li>
+<li><a href="issues/137.html">
+137. Refresh from url after use data option
+</a></li>
+<li><a href="issues/152.html">
+152. How to pass parameter to server
+</a></li>
+<li><a href="issues/177.html">
+177. The Multiple Fields in Column
+</a></li>
+<li><a href="issues/188.html">
+188. Show Export button only
+</a></li>
+<li><a href="issues/220.html">
+220. Hide state column
+</a></li>
+<li><a href="issues/221.html">
+221. Use cellStyle
+</a></li>
+<li><a href="issues/283.html">
+283. Use resetView to reset the header width
+</a></li>
+<li><a href="issues/337.html">
+337. Custom fontawsome icons
+</a></li>
+<li><a href="issues/350.html">
+350. Support for data-field with dot notation
+</a></li>
+<li><a href="issues/353.html">
+353. Use responseHandler option to handle your response data
+</a></li>
+<li><a href="issues/371.html">
+371. Using table content in a HTML form
+</a></li>
+<li><a href="issues/383.html">
+383. Use Flat UI to style the checkboxes
+</a></li>
+<li><a href="issues/386.html">
+386. Override default queryParam variables
+</a></li>
+<li><a href="issues/395.html">
+395. Enable/disable delete button on click checkbox
+</a></li>
+<li><a href="issues/406.html">
+406. Align the toolbar and search input
+</a></li>
+<li><a href="issues/409.html">
+409. Refresh method with new url
+</a></li>
+<li><a href="issues/415.html">
+415. Get checked row index
+</a></li>
+<li><a href="issues/424.html">
+424. Toggle pagination
+</a></li>
+<li><a href="issues/431.html">
+431. Load pagination data
+</a></li>
+<li><a href="issues/457.html">
+457. Set the global defaults for the table
+</a></li>
+<li><a href="issues/561.html">
+561. How to use the filter extension
+</a></li>
+<li><a href="issues/563.html">
+563. Change the background color on selected rows
+</a></li>
+<li><a href="issues/579.html">
+579. Show images formatter
+</a></li>
+<li><a href="issues/639.html">
+639. Footer resizing problem.
+</a></li>
+<li><a href="issues/917.html">
+917. Maintain selected on server side.
+</a></li>
+<li><a href="issues/986.html">
+986. Editable select box
+</a></li>
+<li><a href="issues/987.html">
+987. Save row data using input.
+</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+
+<div class="navigation">
+    <div class="container">
+        <a class="previous" href="#">
+            <i class="glyphicon glyphicon-arrow-left"></i>
+            PREVIOUS: <span></span>
+        </a>
+        <a class="next" href="#">
+            NEXT: <span></span>
+            <i class="glyphicon glyphicon-arrow-right"></i>
+        </a>
+    </div>
+</div>
+
+<div class="ribbon">
+    <a href="#" target="_blank">View Source on GitHub</a>
+</div>
+
+<div class="content">
+    <iframe width="100%" height="100%"></iframe>
+</div>
+</body>
+</html>
+
+<script type="text/javascript">
+function totalTextFormatter(data) {
+        return 'Total';
+    }
+    function totalFormatter(data) {
+        
+        return data.length;
+    }
+    function sumFormatter(data) {
+        field = this.field;
+        var total_sum = data.reduce(function(sum, row) {
+            return (sum) + (row[field] || 0);
+        }, 0);
+        return total_sum;
+    }
+        // 图表
+        function detailFormatter(index, row, $detail) {
+            var pID = row.id;
+            buildTable($detail.html('<table></table>').find('table'), pID);
+        }
+        function buildTable($ext, id) {
+            $ext.bootstrapTable({
+                url: 'data-tree-table-son-'+id+'.json',
+                showHeader: false,
+                clickToSelect:true,
+                columns: [
+                    {
+                        field: 'state',
+                        checkbox: true
+
+                    },{
+                        field: 'name',
+                    }
+                ]
+            });
+        }           
+</script>
+
+
+<script>
+    function operateFormatter(value, row, index) {
+        return [
+           /* '<a class="like" href="javascript:void(0)" title="Like">',
+                '<i class="glyphicon glyphicon-heart"></i>',
+            '</a>',
+            '<a class="edit ml10" href="javascript:void(0)" title="Edit">',
+                '<i class="glyphicon glyphicon-edit"></i>',
+            '</a>',*/
+            '<a class="remove ml10" href="javascript:void(0)" title="Remove">',
+                '<i class=" icon-remove"></i>',
+            '</a>'
+        ].join('');
+    }
+
+    window.operateEvents = {
+      /*  'click .like': function (e, value, row, index) {
+            alert('You click like icon, row: ' + JSON.stringify(row));
+            console.log(value, row, index);
+        },
+        'click .edit': function (e, value, row, index) {
+            alert('You click edit icon, row: ' + JSON.stringify(row));
+            console.log(value, row, index);
+        },*/
+        'click .remove': function (e, value, row, index) {
+            alert('你确定要删除此条信息吗？');
+        }
+    };
+</script>
+<script>
+var $table = $('#table');
+function operateFormatter(value, row, index) {
+        return [
+            '<a class="modify" data-toggle="modal" data-target="#myModal7 href="#" title="修改">',
+            '<i class="icon-edit icon-large" style="font-size:14px;color:#71C971;"></i>',
+            '</a >&nbsp;&nbsp;&nbsp;&nbsp;',
+            '<a class="remove" href="javascript:;" title="删除">',
+            '<i class="icon-trash" style="font-size:14px;color:#F0706D;"></i>',
+            '</a >'
+        ].join('');
+    }
+window.operateEvents = {
+       /* 'click .modify': function (e, value, row, index) {
+            alert('You click like action, row: ' + JSON.stringify(row));
+        },*/
+        'click .remove': function (e, value, row, index) {
+            $table.bootstrapTable('remove', {
+                field: 'itemid',
+                values: [row.itemid]
+            });
+        }
+    };   
+</script>
+<script type="text/javascript">
+    function FullInfo(){ 
+   window.showModalDialog("companyInfo.html","","dialogWidth:1000px; dialogHeight:350px;dialogLeft:400px; dialogTop:300px;  scroll:no;status:no") 
+   } 
+   
+   $(function () { 
+      $('#collapseFour').on('show.bs.collapse', function () {   // 执行一些动作...  在调用 show 方法后触发该事件。还有shown/hide/hidden.bs.collapse 等方法。
+         alert('嘿，当您展开时会提示本警告');})
+   });
+</script>
+</body>
+</html>

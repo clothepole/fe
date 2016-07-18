@@ -1,0 +1,165 @@
+<!DOCTYPE HTML>
+<html>
+		<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>新增合同额</title>
+		<link id="sss" rel="stylesheet" type="text/css" href="../../themes/gray/easyui.css">
+		<link rel="stylesheet" type="text/css" href="../../themes/icon.css">
+		<link rel="stylesheet" type="text/css" href="../../demo/demo.css">
+		<script type="text/javascript" src="../../js/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="../../js/jquery.easyui.min.js"></script>
+		<script type="text/javascript">
+ function cssSet(d){
+	if(d==1){
+		$('#sss').attr('href','../../themes/gray/easyui.css');			
+	}
+	if(d==2){
+		$('#sss').attr('href','../../themes/default/easyui.css');
+	}
+	
+	if(d==3){
+		$('#sss').attr('href','../../themes/black/easyui.css');
+	}
+	if(d==4){
+		$('#sss').attr('href','../../themes/metro/easyui.css');
+	}
+ }
+</script>
+		<script type="text/javascript">
+$(function () {
+        $('#container').highcharts({
+			 chart: {
+             
+				backgroundColor: null,
+				events:{
+				  	click:function(){
+						window.open( '../../38/workQk1.html','','toolbar=no,  menubar=no, location=no, directories=no, status=no, scrollbars=yes, resizable=yes, width=900, height=500, left=200, top=100');
+				//alert('dddddd');  //事件
+					}
+				}
+             
+            },
+            title: {
+                text: '新增合同额',
+                x: 20 //center
+            },
+           /* subtitle: {
+                text: 'Source: WorldClimate.com',
+                x: -20
+            },*/
+            xAxis: {
+                categories: ['1', '2', '3', '4', '5', '6',
+                    '7', '8', '9', '10', '11', '12']
+            },
+			plotOptions: {
+                line: {                    				
+					dataLabels: {
+                        enabled: true						
+                    },
+					enableMouseTraching: false
+				}
+			 },
+            yAxis: {
+                title: {
+                    text: '金额/百万'
+                },
+                plotLines: [{
+                    value: 0,
+                    width: 1,
+                    color: '#808080'
+                }]
+            },
+			
+            tooltip: {
+                valueSuffix: '/百万'
+            },
+			
+			credits:{    //去掉网址
+			     enabled:false
+			},  
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'middle',
+                borderWidth: 0
+            },
+			
+            series: [{
+                name: '科研合同额',
+                data: [23, 20, 25,30,22]
+            }, {
+                name: '批产合同额',
+                data: [30,40,22,40,30]
+            }, {
+                name: '总合同额',
+                data: [25,10,20,25,15]
+            }, {
+                name: '总合同平均额',
+                data: [35.35,35,35,35,35]
+            }, {
+                name: '科研合同平均额',
+                data: [20,20,20,20,20]
+            }, {
+                name: '批产合额平均额',
+                data: [10, 10, 10, 10, 10]
+            }]
+        });
+    });
+    
+
+		</script>
+		</head>
+		<body>
+<script src="../../js/highcharts.js"></script>
+<div class="panel-search" style="padding:10px;"> 月份:
+          从<select class="easyui-combobox" panelHeight="auto" style="width:100px">
+    <option value="java">1月</option>
+    <option value="c">2月</option>
+    <option value="basic">3月</option>
+    <option value="perl">4月</option>
+     <option value="perl">5月</option>
+      <option value="perl">6月</option>
+       <option value="perl">7月</option>
+        <option value="perl">8月</option>
+         <option value="perl">9月</option>
+          <option value="perl">10月</option>
+           <option value="perl">11月</option>
+            <option value="perl">12月</option>
+  </select>到
+         <select class="easyui-combobox" panelHeight="auto" style="width:100px">
+    <option value="java">1月</option>
+    <option value="c">2月</option>
+    <option value="basic">3月</option>
+    <option value="perl">4月</option>
+     <option value="perl">5月</option>
+      <option value="perl">6月</option>
+       <option value="perl">7月</option>
+        <option value="perl">8月</option>
+         <option value="perl">9月</option>
+          <option value="perl">10月</option>
+           <option value="perl">11月</option>
+            <option value="perl">12月</option>
+  </select>
+ &nbsp;&nbsp;年份:
+          从<select class="easyui-combobox" panelHeight="auto" style="width:100px">
+    <option value="java">2000年</option>
+    <option value="c">2001年</option>
+    <option value="basic">2002年</option>
+    <option value="perl">2003年</option>
+     <option value="perl">2004年</option>
+      <option value="perl">2005年</option>
+       <option value="perl">2006年</option>
+  </select>到
+         <select class="easyui-combobox" panelHeight="auto" style="width:100px">
+      <option value="java">2000年</option>
+    <option value="c">2001年</option>
+    <option value="basic">2002年</option>
+    <option value="perl">2003年</option>
+     <option value="perl">2004年</option>
+      <option value="perl">2005年</option>
+       <option value="perl">2006年</option>
+  </select>
+          <a href="#" class="easyui-linkbutton" iconCls="icon-search">统计</a> </div>
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+</body>
+</html>

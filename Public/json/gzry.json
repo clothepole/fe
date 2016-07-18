@@ -1,0 +1,19 @@
+﻿[
+{"itemid":"<a href='#' data-toggle='modal'  data-target='#myModal1'>wm0001</a>","xm":"张三","tel":"139567087","parm":"运营部","gh":"0001","zw":"运营首席","js":"收费员","states":"启用","qy":"","xqmc":"<a href='#' data-toggle='modal'  data-target='#myModal32'>A小区</a>","gs":"20","qx":"用户台帐","mkmc":"<a href='#' data-toggle='modal'  data-target='#myModal1'>用户台帐</a>","ldmc":"A楼栋","yfs":"300"},
+{"itemid":"<a href='#' data-toggle='modal'  data-target='#myModal1'>wm0001</a>","xm":"李四","tel":"139567087","parm":"运营部","gh":"0001","zw":"运营首席","js":"运营长","states":"启用","qy":"","xqmc":"G小区","gs":"20","qx":"","ldmc":"B楼栋","yfs":"300"},
+{"itemid":"<a href='#' data-toggle='modal'  data-target='#myModal1'>wm0001</a>","xm":"王五","tel":"139567087","parm":"运营部","gh":"0001","zw":"运营首席","js":"总经理","states":"启用","qy":"","xqmc":"B小区","gs":"20","qx":"","mkmc":"收费","ldmc":"C楼栋","yfs":"300"},
+{"itemid":"<a href='#' data-toggle='modal'  data-target='#myModal1'>wm0001</a>","xm":"张三","tel":"139567087","parm":"运营部","gh":"0001","zw":"运营首席","js":"区域经理","states":"启用","qy":"","xqmc":"C小区","gs":"20","qx":"","mkmc":"","ldmc":"D楼栋","yfs":"300"},
+{"itemid":"<a href='#' data-toggle='modal'  data-target='#myModal1'>wm0001</a>","xm":"麻七","tel":"139567087","parm":"生产部","gh":"0001","zw":"运营首席","js":"运营长","states":"启用","qy":"","xqmc":"D小区","gs":"20","mkmc":"","ldmc":"A楼栋","yfs":"300"},
+{"itemid":"<a href='#' data-toggle='modal'  data-target='#myModal1'>wm0001</a>","xm":"方降","tel":"139567087","parm":"开发部","gh":"0001","zw":"运营首席","js":"项目经理","states":"启用","qy":"","xqmc":"E小区","gs":"20","mkmc":"","ldmc":"E楼栋","yfs":"300"},
+{"itemid":"<a href='#' data-toggle='modal'  data-target='#myModal1'>wm0001</a>","xm":"刘一","tel":"139567087","parm":"运营部","gh":"0001","zw":"运营首席","js":"运营长","states":"启用"},
+
+{"itemid":"<a href='#' data-toggle='modal'  data-target='#myModal1'>wm0001</a>","xm":"张三","tel":"139567087","parm":"运营部","gh":"0001","zw":"运营首席","js":"运营长","states":"启用"},
+{"itemid":"<a href='#' data-toggle='modal'  data-target='#myModal1'>wm0001</a>","xm":"张三","tel":"139567087","parm":"运营部","gh":"0001","zw":"运营首席","js":"运营长","states":"启用"},
+{"itemid":"<a href='#' data-toggle='modal'  data-target='#myModal1'>wm0001</a>","xm":"张三","tel":"139567087","parm":"运营部","gh":"0001","zw":"运营首席","js":"运营长","states":"启用"},
+{"itemid":"<a href='#' data-toggle='modal'  data-target='#myModal1'>wm0001</a>","xm":"张三","tel":"139567087","parm":"运营部","gh":"0001","zw":"运营首席","js":"运营长","states":"启用"},
+{"itemid":"<a href='#' data-toggle='modal'  data-target='#myModal1'>wm0001</a>","xm":"张三","tel":"139567087","parm":"运营部","gh":"0001","zw":"运营首席","js":"运营长","states":"启用"},
+{"itemid":"<a href='#' data-toggle='modal'  data-target='#myModal1'>wm0001</a>","xm":"张三","tel":"139567087","parm":"运营部","gh":"0001","zw":"运营首席","js":"运营长","states":"启用"}
+
+
+
+]

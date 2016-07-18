@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>部门经理</title>
+
+<script type="text/javascript" src="js/setCssStyle.js"></script>
+<link rel="stylesheet" type="text/css" href="themes/icon.css">
+<link rel="stylesheet" type="text/css" href="demo/demo.css">
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+</head>
+<script type="text/javascript">
+ $(function(){
+	var str = window.location.href;
+	var arr = str.split("?");
+	var d = arr[1]?arr[1].split("=")[1]:0;
+	if(d==1){
+		$('#sss').attr('href','themes/gray/easyui.css');			
+	}
+	if(d==2){
+		$('#sss').attr('href','themes/default/easyui.css');
+	}
+	
+	if(d==3){
+		$('#sss').attr('href','themes/black/easyui.css');
+	}
+	if(d==4){
+		$('#sss').attr('href','themes/metro/easyui.css');
+	}
+	var wHeight = window.top.document.getElementById("testIfrm").style.height;
+	$("table").height(parseInt(wHeight,10) - 2);
+	$("iframe").each(function(){
+		var self = $(this);
+		self.height(($("table").height()-24)/2);
+		self.attr("src",self.attr("src") + "?" + self.height());
+	});
+ });
+</script>
+<body style="padding:0;margin:0;">
+<table width="100%"  class="tablepic" border="1" bordercolordark="#CCCCCC" bordercolorlight="#999999" cellspacing="4" align="center" >
+      <tr>      
+       <td width="52%" height="400px" style="padding:0;margin:0;"><iframe  name="main"  marginheight="0" height="400px" frameborder="0" marginheight="" src="examples/column-parsed/pmNodeFinish2.htm" width="100%"></iframe></td>  
+       <td width="52%" height="400px"  style="padding:0;margin:0;"><iframe  name="main" marginheight="0" height="405px" frameborder="0" src="examples/column-stacked-and-grouped/pmNew21.htm" width="100%"></iframe></td>  
+      </tr>    
+       <tr>      
+        <td  valign="middle" height="400px"  style="padding:0;margin:0;"><iframe  name="main" marginheight="0" height="400px"  frameborder="0" src="examples/column-stacked-and-grouped/pmNew2.htm" width="100%"></iframe></td>
+        
+        <td  valign="middle" height="400px"  style="padding:0;margin:0;"><iframe  name="main" marginheight="0" height="400px"  frameborder="0" src="examples/pie-legend/workRyZT.htm" width="100%"></iframe></td>     
+      </tr> 
+</table>
+</body>
+</html>
